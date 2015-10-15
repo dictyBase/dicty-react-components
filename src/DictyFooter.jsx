@@ -5,7 +5,7 @@ export default class DictyFooter extends React.Component {
 
     render() {
         return (
-            <footer className="dictyFooter">
+            <footer className="dicty-footer">
                 <div className="container">
                     <div className="row">
                         {this.props.children}
