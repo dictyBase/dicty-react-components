@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default class FooterItems extends React.Component {
-    displayName = 'Dicty footer navigation items'
+    displayName = 'Dicty footer site map'
 
     render() {
         return (
