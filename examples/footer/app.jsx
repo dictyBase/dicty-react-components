@@ -27,4 +27,4 @@ const footer = (
     </DictyFooter>
 );
 
-React.render(footer, document.getElementById('navigation_bar'));
+React.render(footer, document.getElementById('dicty-footer'));
