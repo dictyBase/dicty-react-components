@@ -18,25 +18,25 @@ export default class FooterCiteSupport extends React.Component {
         return (
             <div className="col-sm-2 col-xs-12">
                 <div className="cite-support">Please CITE:</div>
-                    <ul className="item-links">
-                        {cite.map(site => {
-                            return (
-                                <li key={site.name}>
-                                    <a href={site.href}>{site.name}</a>
-                                </li>
-                            );
-                        })}
-                    </ul>
+                <ul className="item-links">
+                    {cite.map(site => {
+                        return (
+                            <li key={site.name}>
+                                <a href={site.href}>{site.name}</a>
+                            </li>
+                        );
+                    })}
+                </ul>
                 <div className="cite-support">Supported by</div>
-                    <ul className="item-links">
-                        {support.map(site => {
-                            return (
-                                <li key={site.name}>
-                                    <a href={site.href}>{site.name}</a>
-                                </li>
-                            );
-                        })}
-                    </ul>
+                <ul className="item-links">
+                    {support.map(site => {
+                        return (
+                            <li key={site.name}>
+                                <a href={site.href}>{site.name}</a>
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
         );
     }

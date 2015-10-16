@@ -13,15 +13,15 @@ export default class FootItem extends React.Component {
         return (
             <div className="col-lg-2 col-md-2 col-sm-4 col-xs-12">
                 <h4 className="item-header"> <a href="#">{title}</a></h4>
-                    <ul className="item-links">
-                        {menuItems.map(item => {
-                            return (
-                                <li key={menuItems.indexOf(item)}>
-                                    <a href={item.href}>{item.name}</a>
-                                </li>
-                            );
-                        })}
-                    </ul>
+                <ul className="item-links">
+                    {menuItems.map(item => {
+                        return (
+                            <li key={menuItems.indexOf(item)}>
+                                <a href={item.href}>{item.name}</a>
+                            </li>
+                        );
+                    })}
+                </ul>
             </div>
         );
     }
