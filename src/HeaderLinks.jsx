@@ -1,4 +1,5 @@
 import './styles/flexboxgrid';
+import './styles/dicty-header';
 import React from 'react';
 
 export default class HeaderLinks extends React.Component {
@@ -12,7 +13,7 @@ export default class HeaderLinks extends React.Component {
         return (
             <div className="row end-md">
                 <div className="col-md-12">
-                    <ul>
+                    <ul className="header-links">
                         {this.props.links.map((link, index) => {
                             return (
                                 <li key={index}>
