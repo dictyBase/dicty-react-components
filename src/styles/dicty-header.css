@@ -1,0 +1,19 @@
+.header-links {
+	list-style: none;
+	font: 12px helvetica,arial,sans-serif;
+}
+.header-links li {
+	display: inline;
+}
+.header-links li a {
+	padding: 5px;
+}
+.header-links li a:link,
+.header-links li a:active,
+.header-links li a:visited { 
+	text-decoration: none;
+	color: #1F4484; 
+}
+.header-links li a:hover {
+	color: #3498db;
+}
