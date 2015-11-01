@@ -1,37 +1,29 @@
-import '../../src/styles/flexboxgrid';
 import React from 'react';
+import Header from '../../src/Header';
+import HeaderLogo from '../../src/HeaderLogo';
+import HeaderItems from '../../src/HeaderItems';
+import HeaderLinks from '../../src/HeaderLinks';
+import SearchBox from '../../src/SearchBox';
 
 
-class HeaderLayout extends React.Component {
-    displayName = 'Layout for dicty-header'
+class DictyHeader extends React.Component {
+    displayName = 'dictyBase header'
     render() {
-        // border to display the layout of columns and rows
-        const style = {
-          border: '1px solid'
-        };
-
+        const headerLinks = [
+            {href: '#', name: 'Cite Us', iconClass: 'fa fa-plus'},
+            {href: '#', name: 'Downloads', iconClass: 'fa fa-download'},
+            {href: '#', name: 'About Us', iconClass: 'fa fa-info-circle'}
+        ];
         return (
-            <div className="container-fluid" style={style}>
-                <div className="row center-xs start-sm" >
-                    <div className="col-xs-12 col-sm-4 col-lg-3 col-lg-offset-1" style={style}>
-                      dictyBase Logo
-                    </div>
-                    <div className="col-xs-12 col-sm-8 col-lg-7" style={style}>
-                        <div className="row center-xs end-sm" style={style}>
-                            <a href="#">Cite Us</a>
-                            <a href="#">Downloads</a>
-                            <a href="#">About Us</a>
-                            <a href="#">Contact</a>
-                            <a href="#">Login</a>
-                        </div>
-                        <div className="row center-xs end-sm" style={style}>
-                            <div className="col-xs-12">Search Bar</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Header>
+                <HeaderLogo path= "../src/img/dicty-logo.png" href= "http://dictybase.org/"/>
+                <HeaderItems>
+                    <HeaderLinks links= {headerLinks}/>
+                    <SearchBox />
+                </HeaderItems>
+            </Header>
         );
     }
 }
 
-React.render(<HeaderLayout/>, document.getElementById('dicty-header'));
+React.render(<DictyHeader/>, document.getElementById('dicty-header'));
