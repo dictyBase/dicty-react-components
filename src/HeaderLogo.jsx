@@ -6,15 +6,21 @@ export default class HeaderLogo extends React.Component {
 
     static propTypes = {
         href: React.PropTypes.string,
-        path: React.PropTypes.string
+        path: React.PropTypes.string,
+        height: React.PropTypes.string,
+        width: React.PropTypes.string
+    }
+    static defaultProps = {
+        height: '78',
+        width: '220'
     }
 
     render() {
-        const {href, path} = this.props;
+        const {href, path, height, width} = this.props;
         return (
             <div className="col-md-4">
                 <a href={href}>
-                    <img src={path} alt="logo" width="220" />
+                    <img src={path} alt="logo" height= {height} width={width} />
                 </a>
             </div>
         );
