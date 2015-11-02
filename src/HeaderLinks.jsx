@@ -1,25 +1,28 @@
 import './styles/flexboxgrid';
 import './styles/dicty-header';
+import './styles/font-awesome';
 import React from 'react';
 
 export default class HeaderLinks extends React.Component {
     displayName = 'A component to display a list of links in the header'
 
     static propTypes = {
-        links: React.PropTypes.array
+        links: React.PropTypes.array,
+        style: React.PropTypes.object
     }
 
     render() {
+        const {links, style} = this.props;
         return (
             <div className="row end-md">
                 <div className="col-md-12">
                     <ul className="header-links">
-                        {this.props.links.map((link, index) => {
+                        {links.map((link, index) => {
                             return (
                                 <li key={index}>
-                                    <a href={link.href}>
+                                    <a href={link.href} style={style}>
                                         <span className={link.iconClass}></span>
-                                        {link.name}
+                                        {' '}{link.name}
                                     </a>
                                 </li>
                             );
