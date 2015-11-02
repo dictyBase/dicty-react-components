@@ -10,7 +10,7 @@ class DictyHeader extends React.Component {
     displayName = 'dictyBase header'
     render() {
         const headerLinks = [
-            {href: '#', name: 'Cite Us', iconClass: 'fa fa-plus'},
+            {href: '#', name: 'Cite Us', iconClass: 'fa fa-book'},
             {href: '#', name: 'Downloads', iconClass: 'fa fa-download'},
             {href: '#', name: 'About Us', iconClass: 'fa fa-info-circle'}
         ];
@@ -18,7 +18,7 @@ class DictyHeader extends React.Component {
             <Header>
                 <HeaderLogo path= "../src/img/dicty-logo.png" href= "http://dictybase.org/"/>
                 <HeaderItems>
-                    <HeaderLinks links= {headerLinks}/>
+                    <HeaderLinks links= {headerLinks} />
                     <SearchBox />
                 </HeaderItems>
             </Header>
