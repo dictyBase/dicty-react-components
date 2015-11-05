@@ -20,8 +20,8 @@ export default class SearchBox extends React.Component {
     render() {
         const {btnStyle, btnIcon, placeHolder} = this.props;
         return (
-            <div className="row end-md">
-                <div className="col-md-6">
+            <div className="row center-xs end-sm">
+                <div className="col-xs-12 col-sm-8 col-md-6">
                     <div className="input-group">
                         <input type="text" className="form-control" placeholder={placeHolder} />
                         <span className="input-group-btn">

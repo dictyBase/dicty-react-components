@@ -18,7 +18,7 @@ export default class HeaderLogo extends React.Component {
     render() {
         const {href, path, height, width} = this.props;
         return (
-            <div className="col-md-4">
+            <div className="col-xs-12 col-sm-4 col-lg-3 col-lg-offset-1">
                 <a href={href}>
                     <img src={path} alt="logo" height= {height} width={width} />
                 </a>

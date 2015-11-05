@@ -14,8 +14,8 @@ export default class HeaderLinks extends React.Component {
     render() {
         const {links, style} = this.props;
         return (
-            <div className="row end-md">
-                <div className="col-md-12">
+            <div className="row center-xs end-sm">
+                <div className="col-xs-12">
                     <ul className="header-links">
                         {links.map((link, index) => {
                             return (

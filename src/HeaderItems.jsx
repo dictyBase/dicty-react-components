@@ -6,7 +6,7 @@ export default class HeaderItems extends React.Component {
 
     render() {
         return (
-            <div className="col-md-8">
+            <div className="col-xs-12 col-sm-8 col-lg-7">
                 {this.props.children}
             </div>
         );

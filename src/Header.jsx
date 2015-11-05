@@ -7,7 +7,7 @@ export default class Header extends React.Component {
     render() {
         return (
             <div className="container-fluid">
-                <div className="row start-md bottom-md">
+                <div className="row center-xs start-sm bottom-sm">
                     {this.props.children}
                 </div>
             </div>
