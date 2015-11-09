@@ -29,7 +29,7 @@ module.exports = {
     path: './build'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.css'],
     alias: {
         'dicty-react-components': '../../src/index'
     }
@@ -39,7 +39,21 @@ module.exports = {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           loader: 'babel?stage=0'
-        }
-    ]
+        },
+        {
+          test: /\.css$/,
+          include: path.join(__dirname, '../src/styles/'),
+          loader: 'style!css'
+        },
+        {
+          test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          include: path.join(__dirname, '../src/'),
+          loader: 'url-loader'
+        },
+        {
+          test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          include: path.join(__dirname, '../src/'),
+          loader: 'file-loader'
+        }]
   }
 };

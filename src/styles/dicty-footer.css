@@ -1,85 +1,29 @@
-/*Dicty-Footer*/ 
-
-.dicty-footer {
-    margin-top: 0px;
-    min-width:320px;
-    padding-bottom: 20px;
-    
-
-    /*Background Color*/
-    background: #15317E;
-    background: linear-gradient(#15317E, #0099FF); /* Standard syntax */
-    background: -webkit-linear-gradient(#15317E, #0099FF); /*Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#15317E, #0099FF);  /*Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#15317E, #0099FF);  /*Firefox 3.6 to 15 */
+.footer {
+    background-color: #1F4484;
+    font-family: helvetica,arial,sans-serif;
 }
-
-/*Footer Rollover effects*/
-.dicty-footer a:link { color: #D8D8D8; text-decoration: none; }
-.dicty-footer a:active { color: #D8D8D8; text-decoration: none; }
-.dicty-footer a:visited { color: #D8D8D8; text-decoration: none; }
-.dicty-footer a:hover { color: #FFFFFF; text-decoration: underline;}
-
-/* Head topics*/
-.item-header {
-    font: 14px helvetica,arial,sans-serif;
-    color: #CCFFCC;
-    padding-top: 10px;
-    text-align: left;
-}
-h4.item-header {
-    margin-bottom: 0;
-}
-
-.item-header a:link { color: #CCFFCC; }
-.item-header a:active { color: #CCFFCC; }
-.item-header a:visited { color: #CCFFCC; }
-.item-header a:hover { color: #FFFFFF; text-decoration: underline;}
-
-@media(max-width:767px){
-    .item-header {
-        font: 16px helvetica,arial,sans-serif;
-        color: #CCFFCC;
-        padding-bottom: 1px;
-        padding-top: 30px;
-        text-align: center;
-    }
-}
-/* Sitemap links*/
-.item-links {
-    font: 11px arial, sans-serif;
-}
-ul.item-links {
+.footer ul, li {
     list-style: none;
-}
-ul.item-links li {
-    padding-top: 8px;
-}
-
-ul.item-links, ul.item-links li {
-    margin: 0; 
+    margin-top: 0;
+    margin-left: 0; 
     padding-left: 0;
 }
-@media(max-width:767px){
-    .item-links {
-        font: 12px arial, sans-serif;
-        color: #FFFFFF;
-        padding-top: 8px;
-        text-align: center;
-    }
+.footer li {
+    padding-bottom: 2px;
+    padding-top: 2px;
 }
-/*Cite and Support*/
-.cite-support {
-    font: 14px arial,sans-serif;
-    color: #FFFFFF;
-    padding-top: 25px;
-    text-align: left;
+/*footer-links*/
+.footer li a {
+    color: #ecf0f1;
+    font-size: 12px; 
+    text-decoration: none;
 }
-@media(max-width:767px){
-  .cite-support {
-      font: 16px arial,sans-serif;
-      color: #FFFF00;
-      padding-top: 25px;
-      text-align: center;
-  }
+.item-header, .item-header a {
+    color: #ecf0f1;
+    font-size: 16px;    
+    text-decoration: none;
+    padding: 10px 0px;
+}
+.footer a:hover {
+    text-decoration: underline;
 }

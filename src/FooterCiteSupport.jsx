@@ -1,38 +1,38 @@
+import './styles/flexboxgrid';
+import './styles/dicty-footer';
 import React from 'react';
 
 export default class FooterCiteSupport extends React.Component {
-    displayName = 'Footer component to display dicty sponsors and citation'
+    displayName = 'Footer component to display sponsors and citation'
+
+    static propTypes = {
+       cite: React.PropTypes.array,
+       support: React.PropTypes.array,
+       headerStyle: React.PropTypes.object,
+       linkStyle: React.PropTypes.object
+    }
 
     render() {
-        const cite = [
-            {href: 'http://www.ncbi.nlm.nih.gov/pubmed/23172289', name: 'dictyBase'},
-            {href: 'http://www.ncbi.nlm.nih.gov/pubmed/23494302', name: 'Stock Center'}
-        ];
-
-        const support = [
-            {href: 'http://www.nih.gov/', name: 'NIH'},
-            {href: 'http://gmod.org/wiki/Main_Page', name: 'GMOD'},
-            {href: 'http://geneontology.org/', name: 'Gene Ontology'}
-        ];
+        const {cite, support, headerStyle, linkStyle} = this.props;
 
         return (
-            <div className="col-sm-2 col-xs-12">
-                <div className="cite-support">Please CITE:</div>
-                <ul className="item-links">
-                    {cite.map(site => {
+            <div className="col-xs-12 col-sm-2 center-xs start-sm last-xs">
+                <div className="item-header" style={headerStyle}>Please CITE:</div>
+                <ul>
+                    {cite.map((site, index) => {
                         return (
-                            <li key={site.name}>
-                                <a href={site.href}>{site.name}</a>
+                            <li key={index}>
+                                <a href={site.href} style={linkStyle}>{site.name}</a>
                             </li>
                         );
                     })}
                 </ul>
-                <div className="cite-support">Supported by</div>
-                <ul className="item-links">
-                    {support.map(site => {
+                <div className="item-header" style={headerStyle}>Supported by</div>
+                <ul>
+                    {support.map((site, index) => {
                         return (
-                            <li key={site.name}>
-                                <a href={site.href}>{site.name}</a>
+                            <li key={index}>
+                                <a href={site.href} style={linkStyle}>{site.name}</a>
                             </li>
                         );
                     })}
