@@ -1,0 +1,1 @@
+# Dictybase React Footer
