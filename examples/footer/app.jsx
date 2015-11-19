@@ -1,7 +1,7 @@
 import React from 'react';
 import FooterCiteSupport from '../../src/FooterCiteSupport';
 import Footer from '../../src/Footer';
-import FooterItem from '../../src/FooterItem';
+import {FooterItem} from '../../src/FooterItem';
 
 class DictyFooter extends React.Component {
     displayName = 'dictyBase footer'

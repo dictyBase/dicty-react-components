@@ -1,6 +1,7 @@
 import './styles/flexboxgrid';
 import './styles/dicty-footer';
 import React from 'react';
+import {Link} from './FooterItem';
 
 export default class FooterCiteSupport extends React.Component {
     displayName = 'Footer component to display sponsors and citation'
@@ -21,9 +22,7 @@ export default class FooterCiteSupport extends React.Component {
                 <ul>
                     {cite.map((site, index) => {
                         return (
-                            <li key={index}>
-                                <a href={site.href} style={linkStyle}>{site.name}</a>
-                            </li>
+                            <Link key={index} name={site.name} link={site.href} style={linkStyle} />
                         );
                     })}
                 </ul>
@@ -31,9 +30,7 @@ export default class FooterCiteSupport extends React.Component {
                 <ul>
                     {support.map((site, index) => {
                         return (
-                            <li key={index}>
-                                <a href={site.href} style={linkStyle}>{site.name}</a>
-                            </li>
+                            <Link key={index} name={site.name} link={site.href} style={linkStyle} />
                         );
                     })}
                 </ul>

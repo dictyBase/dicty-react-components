@@ -2,7 +2,7 @@ import './styles/flexboxgrid';
 import './styles/dicty-footer';
 import React from 'react';
 
-export default class FootItem extends React.Component {
+export class FooterItem extends React.Component {
     displayName = 'Footer component for displaying sitemap'
 
     static propTypes = {
@@ -23,13 +23,30 @@ export default class FootItem extends React.Component {
                 <ul>
                     {menuItems.map((item, index) => {
                         return (
-                            <li key={index}>
-                                <a href={item.href} style={linkStyle}>{item.name}</a>
-                            </li>
+                            <Link key={index} name={item.name} link={item.href} style={linkStyle} />
                         );
                     })}
                 </ul>
             </div>
+        );
+    }
+}
+
+export class Link extends React.Component {
+    displayName = 'footer list item with a link'
+
+    static propTypes = {
+       name: React.PropTypes.string,
+       link: React.PropTypes.string,
+       style: React.PropTypes.object
+    }
+
+    render() {
+        const {name, link, style} = this.props;
+        return (
+            <li>
+                <a href={link} style={style}>{name}</a>
+            </li>
         );
     }
 }
