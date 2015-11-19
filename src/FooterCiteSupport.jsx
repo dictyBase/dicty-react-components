@@ -17,7 +17,7 @@ export default class FooterCiteSupport extends React.Component {
         const {cite, support, headerStyle, linkStyle} = this.props;
 
         return (
-            <div className="col-xs-12 col-sm-2 col-lg-1 last-xs">
+            <div className="col-xs-12 col-sm">
                 <div className="item-header" style={headerStyle}>Please cite</div>
                 <ul>
                     {cite.map((site, index) => {

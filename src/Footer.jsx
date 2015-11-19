@@ -18,7 +18,7 @@ export default class Footer extends React.Component {
         return (
             <div className="footer" style={footerStyle} >
                 <div className={containerFluid ? 'container-fluid' : 'container'} >
-                    <div className="row center-xs start-sm around-sm" >
+                    <div className="row center-xs" >
                         {this.props.children}
                     </div>
                 </div>

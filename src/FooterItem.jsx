@@ -16,7 +16,7 @@ export class FooterItem extends React.Component {
     render() {
         const {title, menuItems, headerStyle, linkStyle, titleLink} = this.props;
         return (
-            <div className="col-xs-12 col-sm-1">
+            <div className="col-xs-12 col-sm">
                 <div className="item-header">
                     <a href={titleLink} style={headerStyle}>{title}</a>
                 </div>
