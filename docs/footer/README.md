@@ -12,11 +12,11 @@
 
 *col-xs-12* --> One column per row for extra small screen sizes and up (just like bootstrap grid system)
 
-*col-sm* -->  ` flex-grow: 1;` So in this instance, `FooterItem` and `FooterCiteSupport` have the same flex properties (flex-grow: 1), which means that they have the same width (medium screen sizes and up).
+*col-sm* -->  ` flex-grow: 1;` So in this instance, `FooterItem` and `FooterCiteSupport` have the same flex properties (flex-grow: 1), and therefore they have the same width (small screen sizes and up).
 
 *row center-xs* --> Align elements(inside the row) to the center for all screen sizes.
 
-## React components for dicty footer
+## React components
 The footer consists of the following components.
 ```js
   <Footer>
