@@ -29,3 +29,7 @@ The footer consists of the following components.
     <FooterCiteSupport cite={cite} support={support}/>
   </Footer>
   ```
+### Learn more about each component
+* [Footer](./footer.md)
+* [FooterItem](./footerItem.md)
+* [FooterCiteSupport](./footerCiteSupport.md)
