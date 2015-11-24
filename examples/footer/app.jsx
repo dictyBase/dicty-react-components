@@ -1,7 +1,7 @@
 import React from 'react';
 import FooterCiteSupport from '../../src/FooterCiteSupport';
 import Footer from '../../src/Footer';
-import {FooterItem} from '../../src/FooterItem';
+import {FooterItem, Link} from '../../src/FooterItem';
 
 class DictyFooter extends React.Component {
     displayName = 'dictyBase footer'
@@ -27,11 +27,51 @@ class DictyFooter extends React.Component {
         ];
         return (
             <Footer>
-                <FooterItem title="Genomes" titleLink="#" menuItems={dropdownItems}/>
-                <FooterItem title="Tools" titleLink="#" menuItems={dropdownItems}/>
-                <FooterItem title="Explore" titleLink="#" menuItems={dropdownItems}/>
-                <FooterItem title="Research" titleLink="#" menuItems={dropdownItems}/>
-                <FooterItem title="Community" titleLink="#" menuItems={dropdownItems}/>
+                <FooterItem title="Genomes" titleLink="#">
+                  <ul>
+                      {dropdownItems.map((item, index) => {
+                          return (
+                              <Link key={index} name={item.name} link={item.href}/>
+                          );
+                      })}
+                  </ul>
+                  </FooterItem>
+                <FooterItem title="Tools" titleLink="#">
+                  <ul>
+                      {dropdownItems.map((item, index) => {
+                          return (
+                              <Link key={index} name={item.name} link={item.href}/>
+                          );
+                      })}
+                  </ul>
+                </FooterItem>
+                <FooterItem title="Explore" titleLink="#">
+                  <ul>
+                      {dropdownItems.map((item, index) => {
+                          return (
+                              <Link key={index} name={item.name} link={item.href}/>
+                          );
+                      })}
+                  </ul>
+                </FooterItem>
+                <FooterItem title="Research" titleLink="#">
+                  <ul>
+                      {dropdownItems.map((item, index) => {
+                          return (
+                              <Link key={index} name={item.name} link={item.href}/>
+                          );
+                      })}
+                  </ul>
+                </FooterItem>
+                <FooterItem title="Community" titleLink="#">
+                  <ul>
+                      {dropdownItems.map((item, index) => {
+                          return (
+                              <Link key={index} name={item.name} link={item.href}/>
+                          );
+                      })}
+                  </ul>
+                </FooterItem>
                 <FooterCiteSupport cite={cite} support={support}/>
             </Footer>
         );

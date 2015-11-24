@@ -8,25 +8,17 @@ export class FooterItem extends React.Component {
     static propTypes = {
        title: React.PropTypes.string,
        titleLink: React.PropTypes.string,
-       menuItems: React.PropTypes.array,
-       headerStyle: React.PropTypes.object,
-       linkStyle: React.PropTypes.object
+       headerStyle: React.PropTypes.object
     }
 
     render() {
-        const {title, menuItems, headerStyle, linkStyle, titleLink} = this.props;
+        const {title, headerStyle, titleLink, children} = this.props;
         return (
             <div className="col-xs-12 col-sm">
                 <div className="item-header">
                     <a href={titleLink} style={headerStyle}>{title}</a>
                 </div>
-                <ul>
-                    {menuItems.map((item, index) => {
-                        return (
-                            <Link key={index} name={item.name} link={item.href} style={linkStyle} />
-                        );
-                    })}
-                </ul>
+                {children}
             </div>
         );
     }
