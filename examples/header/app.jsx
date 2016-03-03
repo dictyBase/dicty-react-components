@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from 'react-dom';
 import Header from '../../src/Header';
 import HeaderLogo from '../../src/HeaderLogo';
 import HeaderItems from '../../src/HeaderItems';
@@ -26,4 +27,4 @@ class DictyHeader extends React.Component {
     }
 }
 
-React.render(<DictyHeader/>, document.getElementById('dicty-header'));
+render(<DictyHeader/>, document.getElementById('dicty-header'));
