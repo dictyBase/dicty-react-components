@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from 'react-dom';
 import FooterCiteSupport from '../../src/FooterCiteSupport';
 import Footer from '../../src/Footer';
 import {FooterItem, Link} from '../../src/FooterItem';
@@ -77,4 +78,4 @@ class DictyFooter extends React.Component {
         );
     }
 }
-React.render(<DictyFooter />, document.getElementById('dicty-footer'));
+render(<DictyFooter />, document.getElementById('dicty-footer'));
