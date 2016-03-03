@@ -15,5 +15,11 @@ module.exports = {
     DictyFooter: require('./DictyFooter.jsx'),
     FooterItems: require('./FooterItems.jsx'),
     FootItem: require('./FootItem.jsx'),
-    FooterCiteSupport: require('./FooterCiteSupport.jsx')
+    FooterCiteSupport: require('./FooterCiteSupport.jsx'),
+    Navbar: require('./Navbar.jsx'),
+    NavItem: require('./NavItem.jsx'),
+    NavbarHeader: require('./NavbarHeader.jsx'),
+    NavbarItems: require('./NavbarItems.jsx'),
+    NavbarDropdown: require('./NavbarDropdown.jsx'),
+    DropdownMenu: require('./DropdownMenu.jsx')
 };
