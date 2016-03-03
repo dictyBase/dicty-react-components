@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/dictyBase/dicty-react-components.svg?branch=develop)](https://travis-ci.org/dictyBase/dicty-react-components)
+[![dependencies](https://david-dm.org/dictybase/dicty-react-components.svg)](https://david-dm.org/dictybase/dicty-react-components)
+[![devDependency Status](https://david-dm.org/dictybase/dicty-react-components/dev-status.svg)](https://david-dm.org/dictybase/dicty-react-components#info=devDependencies)
 
 # dicty-react-components
 Collection of [react](http://facebook.github.io/react/index.html) components
