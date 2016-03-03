@@ -11,5 +11,9 @@ module.exports = {
     Container: require('./layout/container.jsx'),
     Row: require('./layout/row.jsx'),
     Column: require('./layout/column.jsx'),
-    InterProDomain: require('./InterProDomain.jsx')
+    InterProDomain: require('./InterProDomain.jsx'),
+    DictyFooter: require('./DictyFooter.jsx'),
+    FooterItems: require('./FooterItems.jsx'),
+    FootItem: require('./FootItem.jsx'),
+    FooterCiteSupport: require('./FooterCiteSupport.jsx')
 };
