@@ -1,6 +1,7 @@
 import React from 'react';
-import HashHistory from 'react-router/lib/HashHistory';
-import {Router, Route} from 'react-router';
+import { render } from 'react-dom';
+import { Router, Route, hashHistory } from 'react-router';
+import { StyleRoot } from 'radium';
 import TabGroup from '../../src/TabGroup';
 import Tab from '../../src/Tab';
 import TabPane from '../../src/TabPane';
@@ -50,40 +51,42 @@ class App extends React.Component {
     displayName = 'App'
     render() {
         return (
-            <Container>
-                <Row>
-                    <Column xsOffset={2} xsSpan={8}>
-                        <TabGroup>
-                            <TabList>
-                                <Tab name="Jerry" to="jerry"/>
-                                <Tab name="George" to="george"/>
-                                <Tab name="Kramer" to="kramer"/>
-                                <Tab name="Elaine" to="elaine"/>
-                            </TabList>
-                            <TabPane>
-                                <TabContent to="jerry">
-                                    <Jerry/>
-                                </TabContent>
-                                <TabContent to="george">
-                                    <George/>
-                                </TabContent>
-                                <TabContent to="elaine">
-                                    <Elaine/>
-                                </TabContent>
-                                <TabContent to="kramer">
-                                    <Kramer/>
-                                </TabContent>
-                            </TabPane>
-                        </TabGroup>
-                    </Column>
-                </Row>
-            </Container>
+            <StyleRoot>
+                <Container>
+                    <Row>
+                        <Column xsOffset={2} xsSpan={8}>
+                            <TabGroup>
+                                <TabList>
+                                    <Tab name="Jerry" to="jerry"/>
+                                    <Tab name="George" to="george"/>
+                                    <Tab name="Kramer" to="kramer"/>
+                                    <Tab name="Elaine" to="elaine"/>
+                                </TabList>
+                                <TabPane>
+                                    <TabContent to="jerry">
+                                        <Jerry/>
+                                    </TabContent>
+                                    <TabContent to="george">
+                                        <George/>
+                                    </TabContent>
+                                    <TabContent to="elaine">
+                                        <Elaine/>
+                                    </TabContent>
+                                    <TabContent to="kramer">
+                                        <Kramer/>
+                                    </TabContent>
+                                </TabPane>
+                            </TabGroup>
+                        </Column>
+                    </Row>
+                </Container>
+            </StyleRoot>
         );
     }
 }
 
 const routes = (
-    <Router history={new HashHistory()}>
+    <Router history={hashHistory}>
         <Route component={App}>
             <Route path="jerry" component={Jerry} />
             <Route path="george" component={George} />
@@ -93,5 +96,5 @@ const routes = (
     </Router>
 );
 
-React.render(routes, document.getElementById('container'));
+render(routes, document.getElementById('container'));
 
