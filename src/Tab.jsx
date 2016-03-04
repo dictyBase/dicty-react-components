@@ -99,7 +99,7 @@ export default class Tab extends React.Component {
         return (
             <li
                 style={[defStyle.base, style && style]}>
-                <a href={router.makeHref(to, this.getQuery())}
+                <a href={router.createHref(to, this.getQuery())}
                     style={linkStyle}>
                     {name}
                 </a>
