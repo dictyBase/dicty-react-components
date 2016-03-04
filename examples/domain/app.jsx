@@ -9,4 +9,4 @@ class App extends React.Component {
         )
     }
 }
-render(<App />, document.body);
+render(<App />, document.getElementById('domain'));
