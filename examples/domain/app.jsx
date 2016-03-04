@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from 'react-dom';
 import InterProDomain from '../../src/InterProDomain';
 import { data as protein } from '../../src/data/interpro';
 class App extends React.Component {
@@ -8,4 +9,4 @@ class App extends React.Component {
         )
     }
 }
-React.render(<App />, document.body);
+render(<App />, document.body);
