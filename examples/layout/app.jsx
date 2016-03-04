@@ -1,4 +1,6 @@
 import React from 'react';
+import { render } from 'react-dom';
+import { StyleRoot } from 'radium';
 import {Responsive} from './Responsive';
 import {Offset} from './Offset';
 import {Justify} from './Justify';
@@ -8,10 +10,12 @@ class ResponsiveApp extends React.Component {
     displayName = 'App to display the responsive layout'
     render() {
         return (
-            <Container>
-                <h1>Responsive</h1>
-                <Responsive/>
-            </Container>
+            <StyleRoot>
+                <Container>
+                    <h1>Responsive</h1>
+                    <Responsive/>
+                </Container>
+            </StyleRoot>
         );
     }
 }
@@ -20,10 +24,12 @@ class OffsetApp extends React.Component {
     displayName = 'App to display offset layout'
     render() {
         return (
-            <Container>
-                <h1>Offset</h1>
-                <Offset/>
-            </Container>
+            <StyleRoot>
+                <Container>
+                    <h1>Offset</h1>
+                    <Offset/>
+                </Container>
+            </StyleRoot>
         );
     }
 }
@@ -32,16 +38,17 @@ class JustifyApp extends React.Component {
     displayName = 'App to display offset layout'
     render() {
         return (
-            <Container>
-                <h1>Alignment</h1>
-                <Justify/>
-            </Container>
+            <StyleRoot>
+                <Container>
+                    <h1>Alignment</h1>
+                    <Justify/>
+                </Container>
+            </StyleRoot>
         );
     }
 }
 
-const content = document.getElementById('responsive');
-React.render(<ResponsiveApp/>, content);
-React.render(<OffsetApp/>, document.getElementById('offset'));
-React.render(<JustifyApp/>, document.getElementById('justify'));
+render(<ResponsiveApp/>, document.getElementById('responsive'));
+render(<OffsetApp/>, document.getElementById('offset'));
+render(<JustifyApp/>, document.getElementById('justify'));
 
