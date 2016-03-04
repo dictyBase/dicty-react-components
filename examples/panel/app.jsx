@@ -1,4 +1,5 @@
-import React from 'react/addons';
+import React from 'react';
+import { render } from 'react-dom';
 import Panel from '../../src/Panel';
 import PanelHeader from '../../src/PanelHeader';
 import PanelTitle from '../../src/PanelTitle';
@@ -163,7 +164,7 @@ class CollapsiblePanel extends React.Component {
     }
 }
 
-React.render(<SimplePanel/>, document.getElementById('simple-panel'));
-React.render(<MultiPanel/>, document.getElementById('multi-panel'));
-React.render(<CollapsiblePanel/>, document.getElementById('collapsible-panel'));
+render(<SimplePanel/>, document.getElementById('simple-panel'));
+render(<MultiPanel/>, document.getElementById('multi-panel'));
+render(<CollapsiblePanel/>, document.getElementById('collapsible-panel'));
 
