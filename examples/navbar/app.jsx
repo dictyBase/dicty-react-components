@@ -1,12 +1,12 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { StyleRoot } from 'radium';
-import Navbar from '../../src/Navbar';
-import NavItem from '../../src/NavItem';
-import NavbarHeader from '../../src/NavbarHeader';
-import NavbarItems from '../../src/NavbarItems';
-import NavbarDropdown from '../../src/NavbarDropdown';
-import DropdownMenu from '../../src/DropdownMenu';
+import React from 'react'
+import { render } from 'react-dom'
+import { StyleRoot } from 'radium'
+import Navbar from '../../src/Navbar'
+import NavItem from '../../src/NavItem'
+import NavbarHeader from '../../src/NavbarHeader'
+import NavbarItems from '../../src/NavbarItems'
+import NavbarDropdown from '../../src/NavbarDropdown'
+import DropdownMenu from '../../src/DropdownMenu'
 
 const navitems = [
     {link: '#', title: 'Setup'},
@@ -14,7 +14,7 @@ const navitems = [
     {link: '#', title: 'Advanced'},
     {link: '#', title: 'Try it out'},
     {link: '#', title: 'FAQ'}
-];
+]
 
 const dropdownItems = [
     {href: '#', name: 'ES2015'},
@@ -23,25 +23,27 @@ const dropdownItems = [
     {href: '#', name: 'Advanced'},
     {href: '#', name: 'Try it'},
     {href: '#', name: 'FAQ'}
-];
+]
 
 const navbarInstance = (
     <StyleRoot>
         <Navbar>
             <NavbarHeader href="http://www.google.com" name="Babel"/>
             <NavbarItems>
-                {navitems.map(item => {
-                    return <NavItem key={navitems.indexOf(item)} link={item.link} title={item.title} />;
-                })}
+                { navitems.map(item => {
+                    return (<NavItem key={ navitems.indexOf(item) }
+                                    link={ item.link } title={ item.title }
+                            />)
+                }) }
                 <NavbarDropdown name="Dropdown">
-                    <DropdownMenu menuItems={dropdownItems}/>
+                    <DropdownMenu menuItems={ dropdownItems }/>
                 </NavbarDropdown>
                 <NavbarDropdown name="Dropdown">
-                    <DropdownMenu menuItems={dropdownItems}/>
+                    <DropdownMenu menuItems={ dropdownItems }/>
                 </NavbarDropdown>
             </NavbarItems>
         </Navbar>
     </StyleRoot>
-);
+)
 
-render(navbarInstance, document.getElementById('navigation_bar'));
+render(navbarInstance, document.getElementById('navigation_bar'))

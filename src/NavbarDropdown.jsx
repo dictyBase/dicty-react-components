@@ -1,5 +1,5 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 @Radium
 export default class NavbarDropdown extends React.Component {
@@ -18,16 +18,39 @@ export default class NavbarDropdown extends React.Component {
         open: false
     }
 
+    componentDidMount() {
+        document.addEventListener('click', this.handleDocumentClick)
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const {index, activeIndex} = nextProps
+        if (index === activeIndex) {
+            if (this.state.open) {
+                this.setState({open: false})
+              // when all the dropdowns are closed, activeIndex is set to -1
+                this.props.parentCallBack(-1)
+            } else {
+                this.setState({open: true})
+            }
+        } else {
+            this.setState({open: false})
+        }
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleDocumentClick)
+    }
+
     getStyles = () => {
         let styles = {
             dropdown: {
-              position: 'relative',
-              display: 'block',
-              boxSizing: 'border-box',
+                position: 'relative',
+                display: 'block',
+                boxSizing: 'border-box',
 
-              '@media (min-width: 768px)': {
-                  float: 'left'
-              }
+                '@media (min-width: 768px)': {
+                    float: 'left'
+                }
             },
             caret: {
                 display: 'inline-block',
@@ -65,80 +88,57 @@ export default class NavbarDropdown extends React.Component {
                     paddingBottom: '15px'
                 }
             }
-        };
-        if (this.props.index === this.props.activeIndex) {
-            styles.link.backgroundColor = this.state.open ? '#e7e7e7' : 'transparent';
         }
-        return styles;
+        if (this.props.index === this.props.activeIndex) {
+            styles.link.backgroundColor = this.state.open ? '#e7e7e7' : 'transparent'
+        }
+        return styles
     }
 
     renderChildren = () => {
-        const {children, index, activeIndex} = this.props;
-        let active = false;
+        const {children, index, activeIndex} = this.props
+        let active = false
         // this particular dropdown is clicked
         if (index === activeIndex) {
-            active = true;
+            active = true
         }
         const newChildren = React.Children.map(children, (child) => {
             return React.cloneElement(child,
                 {
                     open: this.state.open,
                     active: active
-                });
-        });
-        return newChildren;
+                })
+        })
+        return newChildren
     }
 
     handleDocumentClick = () => {
         if (this.state.open) {
-            this.setState({open: false});
+            this.setState({open: false})
           // when all the dropdowns are closed, activeIndex is set to -1
-            this.props.parentCallBack(-1);
+            this.props.parentCallBack(-1)
         }
     }
 
     handleDropdownClick = (e) => {
-        const {index, parentCallBack} = this.props;
-        e.preventDefault();
-        e.nativeEvent.stopImmediatePropagation();
-        parentCallBack(index);
-    }
-
-    componentDidMount() {
-        document.addEventListener('click', this.handleDocumentClick);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('click', this.handleDocumentClick);
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const {index, activeIndex} = nextProps;
-        if (index === activeIndex) {
-            if (this.state.open) {
-                this.setState({open: false});
-              // when all the dropdowns are closed, activeIndex is set to -1
-                this.props.parentCallBack(-1);
-            }else {
-                this.setState({open: true});
-            }
-        } else {
-            this.setState({open: false});
-        }
+        const {index, parentCallBack} = this.props
+        e.preventDefault()
+        e.nativeEvent.stopImmediatePropagation()
+        parentCallBack(index)
     }
 
     render() {
-        const {style, name, itemStyle} = this.props;
-        const defStyle = this.getStyles();
+        const {style, name, itemStyle} = this.props
+        const defStyle = this.getStyles()
         return (
-          <li ref= "dropdown" style={[defStyle.dropdown, style && style]}>
-              <a ref="link" onClick={this.handleDropdownClick} href="#"
-                style={[defStyle.link, itemStyle && itemStyle]}>
-                  {name}{' '}
-                  <b style={[defStyle.caret]}></b>
+          <li ref= "dropdown" style={ [defStyle.dropdown, style && style] }>
+              <a ref="link" onClick={ this.handleDropdownClick } href="#"
+                style={ [defStyle.link, itemStyle && itemStyle] }>
+                  { name }{ ' ' }
+                  <b style={ [defStyle.caret] }></b>
               </a>
-              {this.renderChildren()}
+              { this.renderChildren() }
           </li>
-        );
+        )
     }
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 @Radium
 export default class NavbarItems extends React.Component {
@@ -67,23 +67,23 @@ export default class NavbarItems extends React.Component {
                 content: ' ',
                 boxSizing: 'border-box'
             }
-        };
-        if (this.props.collapseIn) {
-            styles.collapse.display = 'block';
-            styles.collapse.overflowY = 'auto';
         }
-        return styles;
+        if (this.props.collapseIn) {
+            styles.collapse.display = 'block'
+            styles.collapse.overflowY = 'auto'
+        }
+        return styles
     }
 
     onClickHandler = (activeIndex) => {
         this.setState({
             activeIndex: activeIndex
-        });
+        })
     }
 
     renderChildren = () => {
-        const {children} = this.props;
-        const {activeIndex} = this.state;
+        const {children} = this.props
+        const {activeIndex} = this.state
         return React.Children.map(children, (child, index) => {
             return React.cloneElement(child,
                 {
@@ -91,23 +91,23 @@ export default class NavbarItems extends React.Component {
                     activeIndex: activeIndex,
                     parentCallBack: this.onClickHandler
                 }
-            );
-        });
+            )
+        })
     }
 
     render() {
-        const defStyle = this.getStyles();
-        const {style} = this.props;
+        const defStyle = this.getStyles()
+        const {style} = this.props
         return (
-            <div ref ="collapse" style={[defStyle.collapse]}>
-                <span style={[defStyle.pseudoBefore]} />
-                    <ul ref="navitems" style={[defStyle.base, style && style]}>
-                        <span style={[defStyle.pseudoBefore]} />
-                          {this.renderChildren()}
-                        <span style={[defStyle.pseudoAfter]} />
+            <div ref ="collapse" style={ [defStyle.collapse] }>
+                <span style={ [defStyle.pseudoBefore] } />
+                    <ul ref="navitems" style={ [defStyle.base, style && style] }>
+                        <span style={ [defStyle.pseudoBefore] } />
+                          { this.renderChildren() }
+                        <span style={ [defStyle.pseudoAfter] } />
                     </ul>
-                <span style={[defStyle.pseudoAfter]} />
+                <span style={ [defStyle.pseudoAfter] } />
             </div>
-        );
+        )
     }
 }

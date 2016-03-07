@@ -1,12 +1,12 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 @Radium
 export default class NavItem extends React.Component {
     displayName = 'Navigation bar item'
 
     static propTypes = {
-        link:  React.PropTypes.string,
+        link: React.PropTypes.string,
         title: React.PropTypes.string,
         style: React.PropTypes.object,
         itemStyle: React.PropTypes.object
@@ -51,16 +51,20 @@ export default class NavItem extends React.Component {
                     paddingBottom: '15px'
                 }
             }
-        };
+        }
     }
 
     render() {
-        const defStyle = this.getStyles();
-        const {style, link, title, itemStyle} = this.props;
+        const defStyle = this.getStyles()
+        const {style, link, title, itemStyle} = this.props
         return (
-          <li ref="list" style={[defStyle.base, style && style]}>
-              <a ref="link" href={link} style={[defStyle.link, itemStyle && itemStyle]}>{title}</a>
+          <li ref="list" style={ [defStyle.base, style && style] }>
+              <a ref="link"
+                href={ link }
+                style={ [defStyle.link, itemStyle && itemStyle] }>
+                { title }
+              </a>
           </li>
-        );
+        )
     }
 }

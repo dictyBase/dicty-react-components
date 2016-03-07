@@ -1,18 +1,18 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 @Radium
 export default class Navbar extends React.Component {
     displayName = 'Navigation bar'
 
     static propTypes = {
-        navStyle:  React.PropTypes.object,
+        navStyle: React.PropTypes.object,
         contStyle: React.PropTypes.object,
-        children:  React.PropTypes.node
+        children: React.PropTypes.node
     }
 
     state = {
-      collapseIn: false
+        collapseIn: false
     }
 
     getStyles = () => {
@@ -56,38 +56,38 @@ export default class Navbar extends React.Component {
                 content: ' ',
                 boxSizing: 'border-box'
             }
-        };
+        }
     }
 
     renderChildren = () => {
-        const {children} = this.props;
+        const {children} = this.props
         return React.Children.map(children, (child) => {
             return React.cloneElement(child,
-              {
-                navbarToggle: this.navbarToggle,
-                collapseIn: this.state.collapseIn
-              }
-            );
-        });
+                {
+                    navbarToggle: this.navbarToggle,
+                    collapseIn: this.state.collapseIn
+                }
+            )
+        })
     }
 
     navbarToggle = () => {
-        this.setState({collapseIn: !this.state.collapseIn});
+        this.setState({collapseIn: !this.state.collapseIn})
     }
 
     render() {
-        const defStyle = this.getStyles();
-        const {navStyle, contStyle} = this.props;
+        const defStyle = this.getStyles()
+        const {navStyle, contStyle} = this.props
         return (
-            <nav ref="navbar" style={[defStyle.navbar, navStyle && navStyle]}>
-                <span style={[defStyle.pseudoBefore]} />
-                    <div ref="container" style={[defStyle.container, contStyle && contStyle]}>
-                        <span style={[defStyle.pseudoBefore]} />
-                            {this.renderChildren()}
-                        <span style={[defStyle.pseudoAfter]} />
+            <nav ref="navbar" style={ [defStyle.navbar, navStyle && navStyle] }>
+                <span style={ [defStyle.pseudoBefore] } />
+                    <div ref="container" style={ [defStyle.container, contStyle && contStyle] }>
+                        <span style={ [defStyle.pseudoBefore] } />
+                            { this.renderChildren() }
+                        <span style={ [defStyle.pseudoAfter] } />
                     </div>
-                <span style={[defStyle.pseudoAfter]} />
+                <span style={ [defStyle.pseudoAfter] } />
             </nav>
-        );
+        )
     }
 }

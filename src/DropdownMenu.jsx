@@ -1,5 +1,5 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 @Radium
 export default class DropdownMenu extends React.Component {
@@ -13,7 +13,7 @@ export default class DropdownMenu extends React.Component {
     }
 
     getStyles = () => {
-        const {open, active} = this.props;
+        const {open, active} = this.props
         let styles = {
             menu: {
                 position: 'absolute',
@@ -76,30 +76,31 @@ export default class DropdownMenu extends React.Component {
                     }
                 }
             }
-        };
-        if (active) {
-            styles.menu.display = open ? 'block' : 'none';
-        } else {
-            styles.menu.display = 'none';
         }
-        return styles;
+        if (active) {
+            styles.menu.display = open ? 'block' : 'none'
+        } else {
+            styles.menu.display = 'none'
+        }
+        return styles
     }
 
     render() {
-        const defStyle = this.getStyles();
-        const {menuItems, style, menuItemStyle} = this.props;
+        const defStyle = this.getStyles()
+        const {menuItems, style, menuItemStyle} = this.props
         return (
-          <ul style={[defStyle.menu, style && style]}>
-              {menuItems.map(item => {
+          <ul style={ [defStyle.menu, style && style] }>
+              { menuItems.map(item => {
                   return (
-                    <li key={menuItems.indexOf(item)}>
-                        <a key={item.name} style={[defStyle.link, menuItemStyle && menuItemStyle]}
-                            href={item.href}>{item.name}
+                    <li key={ menuItems.indexOf(item) }>
+                        <a key={ item.name }
+                            style={ [defStyle.link, menuItemStyle && menuItemStyle] }
+                            href={ item.href }>{ item.name }
                         </a>
                     </li>
-                  );
-              })}
+                  )
+              }) }
         </ul>
-      );
+      )
     }
 }

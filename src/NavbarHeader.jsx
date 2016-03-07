@@ -1,15 +1,15 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 @Radium
 export default class NavbarHeader extends React.Component {
     displayName = 'Navigation bar header'
 
     static propTypes = {
-        href:        React.PropTypes.string,
-        name:        React.PropTypes.string,
+        href: React.PropTypes.string,
+        name: React.PropTypes.string,
         headerStyle: React.PropTypes.object,
-        brandStyle:  React.PropTypes.object
+        brandStyle: React.PropTypes.object
     }
 
     getStyles = () => {
@@ -67,15 +67,15 @@ export default class NavbarHeader extends React.Component {
                 boxSizing: 'border-box',
 
                 ':hover': {
-                  backgroundColor: '#ddd'
+                    backgroundColor: '#ddd'
                 },
 
                 ':focus': {
-                  outline: '0',
-                  backgroundColor: '#ddd'
+                    outline: '0',
+                    backgroundColor: '#ddd'
                 },
                 '@media (min-width: 768px)': {
-                  display: 'none'
+                    display: 'none'
                 }
             },
             srOnly: {
@@ -89,7 +89,7 @@ export default class NavbarHeader extends React.Component {
                 borderWidth: '0',
                 borderStyle: 'none',
                 boxSizing: 'border-box'
-              },
+            },
             iconBar: {
                 display: 'block',
                 width: '22px',
@@ -99,7 +99,7 @@ export default class NavbarHeader extends React.Component {
                 boxSizing: 'border-box'
             },
             burger: {
-              marginTop: '4px'
+                marginTop: '4px'
             },
             pseudoBefore: {
                 display: 'table',
@@ -112,33 +112,37 @@ export default class NavbarHeader extends React.Component {
                 content: ' ',
                 boxSizing: 'border-box'
             }
-        };
+        }
     }
 
     renderToggleButton = () => {
-        const defStyle = this.getStyles();
+        const defStyle = this.getStyles()
         return (
-          <button type="button" style={[defStyle.navbarToggle]} onClick= {this.props.navbarToggle}>
-              <span style={[defStyle.srOnly]}>Toggle navigation</span>
-              <span style={[defStyle.iconBar]}></span>
-              <span style={[defStyle.iconBar, defStyle.burger]}></span>
-              <span style={[defStyle.iconBar, defStyle.burger]}></span>
+          <button type="button"
+            style={ [defStyle.navbarToggle] }
+            onClick= { this.props.navbarToggle }>
+              <span style={ [defStyle.srOnly] }>Toggle navigation</span>
+              <span style={ [defStyle.iconBar] }></span>
+              <span style={ [defStyle.iconBar, defStyle.burger] }></span>
+              <span style={ [defStyle.iconBar, defStyle.burger] }></span>
           </button>
-        );
+        )
     }
 
     render() {
-        const defStyle = this.getStyles();
-        const {href, name, headerStyle, brandStyle} = this.props;
+        const defStyle = this.getStyles()
+        const {href, name, headerStyle, brandStyle} = this.props
         return (
-            <div key="header" style={[defStyle.header, headerStyle && headerStyle]}>
-                <span style={[defStyle.pseudoBefore]} />
-                    {this.renderToggleButton()}
-                    <a key="brand" style={[defStyle.brand, brandStyle && brandStyle]} href={href}>
-                        {name}
+            <div key="header" style={ [defStyle.header, headerStyle && headerStyle] }>
+                <span style={ [defStyle.pseudoBefore] } />
+                    { this.renderToggleButton() }
+                    <a key="brand"
+                        style={ [defStyle.brand, brandStyle && brandStyle] }
+                        href={ href }>
+                            { name }
                     </a>
-                <span style={[defStyle.pseudoAfter]} />
+                <span style={ [defStyle.pseudoAfter] } />
             </div>
-        );
+        )
     }
 }
