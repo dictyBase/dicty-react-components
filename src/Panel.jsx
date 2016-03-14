@@ -1,5 +1,5 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 /**
  * panel component
@@ -86,32 +86,32 @@ export default class Panel extends React.Component {
             {
                 click: true,
                 open: this.state.open ? false : true
-            });
+            })
     }
     /**
      * @return {ReactElement[]} List of react elements
      */
     renderChildren = () => {
-        const {collapse, children} = this.props;
+        const {collapse, children} = this.props
         if (collapse) {
             const newChildren = React.Children.map(children, (child) => {
                 return React.cloneElement(child,
-                              {
-                                 open: this.state.open,
-                                 collapse: collapse,
-                                 clickFunc: this.onChildClick,
-                                 clicked: this.state.click
-                             });
-            });
-            return newChildren;
+                    {
+                        open: this.state.open,
+                        collapse: collapse,
+                        clickFunc: this.onChildClick,
+                        clicked: this.state.click
+                    })
+            })
+            return newChildren
         }
-        return children;
+        return children
     }
     /** @return {Object} gets the default style
      * @property {Object} base The default style object
      */
     getStyles = () => {
-        const {collapse} = this.props;
+        const {collapse} = this.props
         let style = {
             base: {
                 marginTop: '5px',
@@ -124,19 +124,19 @@ export default class Panel extends React.Component {
                 borderRadius: 4,
                 fontFamily: 'Helvetica Neue,Helvetica,Arial,sans-serif'
             }
-        };
-        if (collapse) {
-            style.base.marginBottom = 0;
         }
-        return style;
+        if (collapse) {
+            style.base.marginBottom = 0
+        }
+        return style
     }
     render() {
-        const {style} = this.props;
+        const {style} = this.props
         return (
             <div
-                style={[this.getStyles().base, style && style]}>
-                {this.renderChildren()}
+                style={ [this.getStyles().base, style && style] }>
+                { this.renderChildren() }
             </div>
-        );
+        )
     }
 }

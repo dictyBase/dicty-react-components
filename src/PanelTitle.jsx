@@ -1,5 +1,5 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 /**
  * panel title component
@@ -32,10 +32,10 @@ export default class PanelTitle extends React.Component {
         collapse: (props, propName) => {
             if (props[propName]) {
                 if (typeof (props[propName]) !== 'boolean') {
-                    return new Error('Expect a boolean value');
+                    return new Error('Expect a boolean value')
                 }
                 if (!props.clickFunc) {
-                    return new Error('clickFunc props needs to be defined');
+                    return new Error('clickFunc props needs to be defined')
                 }
             }
         }
@@ -62,23 +62,23 @@ export default class PanelTitle extends React.Component {
                     textDecoration: 'underline'
                 }
             }
-        };
+        }
     }
     render() {
-        const {collapse, style, children, clickFunc} = this.props;
-        let elem;
+        const {collapse, style, children, clickFunc} = this.props
+        let elem
         if (collapse) {
             elem = (
-                <a href="#" style={this.getStyles().href} onClick={clickFunc}>{children}</a>
-            );
+                <a href="#" style={ this.getStyles().href } onClick={ clickFunc }>{ children }</a>
+            )
         } else {
-            elem = children;
+            elem = children
         }
         return (
             <h3
-                style={[this.getStyles().base, style && style]}>
-                {elem}
+                style={ [this.getStyles().base, style && style] }>
+                { elem }
             </h3>
-        );
+        )
     }
 }

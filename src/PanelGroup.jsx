@@ -1,5 +1,5 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 /**
  * panel group component
@@ -56,15 +56,15 @@ export default class PanelGroup extends React.Component {
                 color: '#333',
                 marginBottom: 20
             }
-        };
+        }
     }
     render() {
-        const {style, children} = this.props;
+        const {style, children} = this.props
         return (
             <div
-                style={[this.getStyles().base, style && style]}>
-                {children}
+                style={ [this.getStyles().base, style && style] }>
+                { children }
             </div>
-        );
+        )
     }
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 /**
  * panel header component
@@ -33,25 +33,25 @@ export default class PanelHeader extends React.Component {
      * @return {ReactElement[]} List of react elements
      */
     renderChildren = () => {
-        const {collapse, children, clickFunc} = this.props;
+        const {collapse, children, clickFunc} = this.props
         if (collapse) {
             const newChildren = React.Children.map(children, (child) => {
                 return React.cloneElement(child,
-                              {
-                                 collapse: collapse,
-                                 clickFunc: clickFunc
-                             });
-            });
-            return newChildren;
+                    {
+                        collapse: collapse,
+                        clickFunc: clickFunc
+                    })
+            })
+            return newChildren
         }
-        return children;
+        return children
     }
     /**
      * @return {Object} gets the default style
      * @property {Object} base The default style object
      */
     getStyles = () => {
-        const {collapse} = this.props;
+        const {collapse} = this.props
         const style = {
             base: {
                 color: '#333',
@@ -64,19 +64,19 @@ export default class PanelHeader extends React.Component {
                 fontSize: '14px',
                 lineHeight: 1.42857143
             }
-        };
-        if (collapse) {
-            style.base.borderBottom = '0px none #ddd';
         }
-        return style;
+        if (collapse) {
+            style.base.borderBottom = '0px none #ddd'
+        }
+        return style
     }
     render() {
-        const {style} = this.props;
+        const {style} = this.props
         return (
             <div
-                style={[this.getStyles().base, style && style]}>
-                {this.renderChildren()}
+                style={ [this.getStyles().base, style && style] }>
+                { this.renderChildren() }
             </div>
-        );
+        )
     }
 }

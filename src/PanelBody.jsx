@@ -1,5 +1,5 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 /**
  * panel body component
@@ -50,7 +50,7 @@ export default class PanelBody extends React.Component {
      *  @property {Object} base The default style object
      */
     getStyles = () => {
-        const {collapse} = this.props;
+        const {collapse} = this.props
         let style = {
             base: {
                 padding: '15px',
@@ -60,29 +60,29 @@ export default class PanelBody extends React.Component {
                 borderTop: '1px solid #ddd',
                 color: '#333'
             }
-        };
-        if (collapse) {
-            style.base.overflow = 'hidden';
-            style.base.transition = 'height 0.5s ease-in-out, visibility 0.5s ease-in-out';
         }
-        return style;
+        if (collapse) {
+            style.base.overflow = 'hidden'
+            style.base.transition = 'height 0.5s ease-in-out, visibility 0.5s ease-in-out'
+        }
+        return style
     }
     render() {
-        const {collapse, open, style, children, clicked} = this.props;
-        let defStyle = this.getStyles();
+        const {collapse, open, style, children, clicked} = this.props
+        let defStyle = this.getStyles()
         if (collapse) {
             if (open && clicked) {
-                defStyle.base.display = 'block';
+                defStyle.base.display = 'block'
             }
             if (!open && clicked) {
-                defStyle.base.display = 'none';
+                defStyle.base.display = 'none'
             }
         }
         return (
             <div
-                style={[defStyle.base, style && style]}>
-                {children}
+                style={ [defStyle.base, style && style] }>
+                { children }
             </div>
-        );
+        )
     }
 }
