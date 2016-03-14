@@ -85,7 +85,7 @@ export default class Panel extends React.Component {
         this.setState(
             {
                 click: true,
-                open: this.state.open ? false : true
+                open: !this.state.open
             })
     }
     /**
