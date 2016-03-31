@@ -21,5 +21,6 @@ module.exports = {
     NavbarHeader: require('./NavbarHeader.jsx'),
     NavbarItems: require('./NavbarItems.jsx'),
     NavbarDropdown: require('./NavbarDropdown.jsx'),
-    DropdownMenu: require('./DropdownMenu.jsx')
-};
+    DropdownMenu: require('./DropdownMenu.jsx'),
+    RouterNavItem: require('./RouterNavItem.jsx')
+}
