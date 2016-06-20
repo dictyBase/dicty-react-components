@@ -21,8 +21,8 @@ export default class NavbarHeader extends React.Component {
 
                 '@media (min-width: 768px)': {
                     float: 'left',
-                    marginRight: '0',
-                    marginLeft: '0'
+                    marginRight: '0px',
+                    marginLeft: '0px'
                 }
             },
             brand: {
@@ -71,7 +71,7 @@ export default class NavbarHeader extends React.Component {
                 },
 
                 ':focus': {
-                    outline: '0',
+                    outline: '0px',
                     backgroundColor: '#ddd'
                 },
                 '@media (min-width: 768px)': {
@@ -82,11 +82,11 @@ export default class NavbarHeader extends React.Component {
                 position: 'absolute',
                 width: '1px',
                 height: '1px',
-                padding: '0',
+                padding: '0px',
                 margin: '-1px',
                 overflow: 'hidden',
                 clip: 'rect(0, 0, 0, 0)',
-                borderWidth: '0',
+                borderWidth: '0px',
                 borderStyle: 'none',
                 boxSizing: 'border-box'
             },
@@ -103,13 +103,13 @@ export default class NavbarHeader extends React.Component {
             },
             pseudoBefore: {
                 display: 'table',
-                content: ' ',
+                content: '',
                 boxSizing: 'border-box'
             },
             pseudoAfter: {
                 clear: 'both',
                 display: 'table',
-                content: ' ',
+                content: '',
                 boxSizing: 'border-box'
             }
         }

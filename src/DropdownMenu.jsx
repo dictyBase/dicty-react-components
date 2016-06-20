@@ -18,7 +18,7 @@ export default class DropdownMenu extends React.Component {
             menu: {
                 position: 'absolute',
                 top: '100%',
-                left: '0',
+                left: '0px',
                 zIndex: '1000',
                 float: 'left',
                 minWidth: '160px',

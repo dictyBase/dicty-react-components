@@ -54,8 +54,8 @@ export default class NavbarDropdown extends React.Component {
             },
             caret: {
                 display: 'inline-block',
-                width: '0',
-                height: '0',
+                width: '0px',
+                height: '0px',
                 marginLeft: '2px',
                 verticalAlign: 'middle',
                 borderTop: '4px dashed',

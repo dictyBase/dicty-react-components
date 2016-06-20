@@ -47,13 +47,13 @@ export default class Navbar extends React.Component {
             },
             pseudoBefore: {
                 display: 'table',
-                content: ' ',
+                content: '',
                 boxSizing: 'border-box'
             },
             pseudoAfter: {
                 clear: 'both',
                 display: 'table',
-                content: ' ',
+                content: '',
                 boxSizing: 'border-box'
             }
         }
