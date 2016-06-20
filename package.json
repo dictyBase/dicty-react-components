@@ -44,11 +44,11 @@
     "webpack": "~1.12.14"
   },
   "dependencies": {
-    "d3": "^3.5.16",
-    "radium": "^0.16.6",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "react-router": "^2.0.0"
+    "d3": "^3.5.17",
+    "radium": "^0.17.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1"
   },
   "scripts": {
     "test": "node_modules/.bin/karma start --single-run"
