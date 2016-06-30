@@ -46,17 +46,17 @@ module.exports = {
         },
         {
           test: /\.css$/,
-          include: path.join(__dirname, '../src/styles/'),
+          include: [path.join(__dirname, '../src/styles/'), /font-awesome/],
           loader: 'style!css'
         },
         {
           test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-          include: path.join(__dirname, '../src/'),
+          include: [path.join(__dirname, '../src/'), /font-awesome/],
           loader: 'url-loader'
         },
         {
           test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-          include: path.join(__dirname, '../src/'),
+          include: [path.join(__dirname, '../src/'), /font-awesome/],
           loader: 'file-loader'
         }]
   }
