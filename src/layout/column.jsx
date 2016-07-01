@@ -31,24 +31,6 @@ export default class Column extends React.Component {
         lgOffset: colValues,
         style: React.PropTypes.object
     }
-    render() {
-        const { children, style } = this.props
-        const defStyle = this.getStyles()
-        let allStyles = ['xsSpan', 'smSpan', 'mdSpan', 'lgSpan'].map(param => {
-            if (this.props[param]) {
-                if (this.props[param] === 'auto') {
-                    return defStyle[param].auto
-                }
-                return defStyle[param].base
-            }
-        }, this)
-        allStyles.push(style && style)
-        return (
-            <div style={ allStyles }>
-              { children }
-            </div>
-        )
-    }
     getStyles = () => {
         const { xsSpan, smSpan, mdSpan, lgSpan } = this.props
         const { xsOffset, smOffset, mdOffset, lgOffset } = this.props
@@ -122,5 +104,23 @@ export default class Column extends React.Component {
             mdSpan: mdStyles,
             lgSpan: lgStyles
         }
+    }
+    render() {
+        const { children, style } = this.props
+        const defStyle = this.getStyles()
+        let allStyles = ['xsSpan', 'smSpan', 'mdSpan', 'lgSpan'].map(param => {
+            if (this.props[param]) {
+                if (this.props[param] === 'auto') {
+                    return defStyle[param].auto
+                }
+                return defStyle[param].base
+            }
+        }, this)
+        allStyles.push(style && style)
+        return (
+            <div style={ allStyles }>
+              { children }
+            </div>
+        )
     }
 }
