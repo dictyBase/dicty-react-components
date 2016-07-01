@@ -1,5 +1,5 @@
-import './styles/flexboxgrid';
-import React from 'react';
+import React from 'react'
+import Column from './layout/column'
 
 export default class HeaderLogo extends React.Component {
     displayName = 'A componenet to display the company logo on header'
@@ -16,13 +16,15 @@ export default class HeaderLogo extends React.Component {
     }
 
     render() {
-        const {href, path, height, width} = this.props;
+        const {href, path, height, width} = this.props
         return (
-            <div className="col-xs-12 col-sm-4 col-lg-3 col-lg-offset-1">
-                <a href={href}>
-                    <img src={path} alt="logo" height= {height} width={width} />
+            <Column
+              xsSpan={ 12 }
+              smSpan={ 4 }>
+                <a href={ href }>
+                    <img src={ path } alt="logo" height= { height } width={ width } />
                 </a>
-            </div>
-        );
+            </Column>
+        )
     }
 }
