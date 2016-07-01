@@ -1,7 +1,7 @@
-import './styles/flexboxgrid';
-import './styles/bootstrap';
+import './styles/flexboxgrid'
+import './styles/bootstrap'
 import 'font-awesome/css/font-awesome.css'
-import React from 'react';
+import React from 'react'
 
 export default class SearchBox extends React.Component {
     displayName = 'Search box component'
@@ -18,20 +18,20 @@ export default class SearchBox extends React.Component {
     }
 
     render() {
-        const {btnStyle, btnIcon, placeHolder} = this.props;
+        const {btnStyle, btnIcon, placeHolder} = this.props
         return (
             <div className="row center-xs end-sm">
                 <div className="col-xs-12 col-sm-8 col-md-6">
                     <div className="input-group">
-                        <input type="text" className="form-control" placeholder={placeHolder} />
+                        <input type="text" className="form-control" placeholder={ placeHolder } />
                         <span className="input-group-btn">
-                            <button className={btnStyle} type="button">
-                                <span className={btnIcon}></span>
+                            <button className={ btnStyle } type="button">
+                                <span className={ btnIcon }></span>
                             </button>
                         </span>
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
