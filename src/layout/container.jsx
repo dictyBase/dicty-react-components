@@ -40,7 +40,8 @@ export default class Container extends React.Component {
         return (
             <div
               style={ [
-                  fixed ? defStyle.fixed : defStyle.base,
+                  defStyle.base,
+                  fixed && defStyle.fixed,
                   style && style
               ] }>
               { children }
