@@ -1,21 +1,21 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 
 function colCountToPercent(count) {
-  return (count / 12) * 100 + '%';
+    return (count / 12) * 100 + '%'
 }
 
 function getColumnValues() {
-  let values = [];
-  for (let i = 1; i <= 12; i = i + 1) {
-    values.push(i);
-  }
-  values.push('auto');
-  return values;
+    let values = []
+    for (let i = 1; i <= 12; i = i + 1) {
+        values.push(i)
+    }
+    values.push('auto')
+    return values
 }
 
-const colValues = React.PropTypes.oneOf(getColumnValues());
+const colValues = React.PropTypes.oneOf(getColumnValues())
 
 @Radium
 export default class Column extends React.Component {
@@ -32,28 +32,27 @@ export default class Column extends React.Component {
         style: React.PropTypes.object
     }
     render() {
-      const { children, style } = this.props;
-      const defStyle = this.getStyles();
-      let allStyles
-            = ['xsSpan', 'smSpan', 'mdSpan', 'lgSpan'].map(param => {
-              if (this.props[param]) {
+        const { children, style } = this.props
+        const defStyle = this.getStyles()
+        let allStyles = ['xsSpan', 'smSpan', 'mdSpan', 'lgSpan'].map(param => {
+            if (this.props[param]) {
                 if (this.props[param] === 'auto') {
-                  return defStyle[param].auto;
+                    return defStyle[param].auto
                 }
-                return defStyle[param].base;
-              }
-            }, this);
-      allStyles.push(style && style);
-      return (
-            <div style={allStyles}>
-              {children}
+                return defStyle[param].base
+            }
+        }, this)
+        allStyles.push(style && style)
+        return (
+            <div style={ allStyles }>
+              { children }
             </div>
-        );
+        )
     }
     getStyles = () => {
-      const { xsSpan, smSpan, mdSpan, lgSpan } = this.props;
-      const { xsOffset, smOffset, mdOffset, lgOffset } = this.props;
-      const xsStyles = {
+        const { xsSpan, smSpan, mdSpan, lgSpan } = this.props
+        const { xsOffset, smOffset, mdOffset, lgOffset } = this.props
+        const xsStyles = {
             base: {
                 boxSizing: 'border-box',
                 paddingLeft: '15px',
@@ -71,8 +70,8 @@ export default class Column extends React.Component {
                 flexGrow: 1,
                 flexBasis: 0
             }
-        };
-      const smStyles = {
+        }
+        const smStyles = {
             base: {
                 '@media (min-width: 768px)': {
                     flexBasis: colCountToPercent(smSpan),
@@ -86,8 +85,8 @@ export default class Column extends React.Component {
                 }
             }
 
-        };
-      const mdStyles = {
+        }
+        const mdStyles = {
             base: {
                 '@media (min-width: 992px)': {
                     flexBasis: colCountToPercent(mdSpan),
@@ -101,8 +100,8 @@ export default class Column extends React.Component {
                 }
             }
 
-        };
-      const lgStyles = {
+        }
+        const lgStyles = {
             base: {
                 '@media (min-width: 1200px)': {
                     flexBasis: colCountToPercent(lgSpan),
@@ -116,12 +115,12 @@ export default class Column extends React.Component {
                 }
             }
 
-        };
-      return {
+        }
+        return {
             xsSpan: xsStyles,
             smSpan: smStyles,
             mdSpan: mdStyles,
             lgSpan: lgStyles
-        };
+        }
     }
 }

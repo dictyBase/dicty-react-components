@@ -1,5 +1,5 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 @Radium
 export default class Container extends React.Component {
@@ -12,7 +12,7 @@ export default class Container extends React.Component {
         fluid: false
     }
     getStyles = () => {
-      return {
+        return {
             base: {
                 marginRight: 'auto',
                 marginLeft: 'auto',
@@ -32,20 +32,20 @@ export default class Container extends React.Component {
                     width: '1170px'
                 }
             }
-        };
+        }
     }
     render() {
-      const { fixed, children, style } = this.props;
-      const defStyle = this.getStyles();
-      return (
+        const { fixed, children, style } = this.props
+        const defStyle = this.getStyles()
+        return (
             <div
-              style={[
+              style={ [
                   fixed ? defStyle.fixed : defStyle.base,
                   style && style
-              ]}>
-              {children}
+              ] }>
+              { children }
             </div>
-        );
+        )
     }
 }
 
