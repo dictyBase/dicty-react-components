@@ -17,10 +17,17 @@ export default class HeaderLogo extends React.Component {
 
     render() {
         const {href, path, height, width} = this.props
+        const style = {
+            textAlign: 'center',
+            '@media (min-width: 768px)': {
+                textAlign: 'start'
+            }
+        }
         return (
             <Column
               xsSpan={ 12 }
-              smSpan={ 4 }>
+              smSpan={ 4 }
+              style={ style }>
                 <a href={ href }>
                     <img src={ path } alt="logo" height= { height } width={ width } />
                 </a>
