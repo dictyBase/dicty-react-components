@@ -9,7 +9,7 @@ export default class Container extends React.Component {
         style: React.PropTypes.object
     }
     static defaultProps = {
-        fluid: false
+        fixed: false
     }
     getStyles = () => {
         return {
