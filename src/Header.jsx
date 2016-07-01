@@ -6,9 +6,10 @@ export default class Header extends React.Component {
     displayName = 'A top level component for header'
 
     render() {
+        const style = { alignItems: 'flex-end' }
         return (
             <Container fixed>
-                <Row justify={ ['center-xs', 'start-sm'] }>
+                <Row justify={ ['center-xs', 'start-sm'] } style={ style }>
                     { this.props.children }
                 </Row>
             </Container>
