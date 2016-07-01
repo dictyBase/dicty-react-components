@@ -1,7 +1,8 @@
-import './styles/flexboxgrid'
+import React from 'react'
+import Row from './layout/row'
+import Column from './layout/column'
 import './styles/dicty-header'
 import 'font-awesome/css/font-awesome.css'
-import React from 'react'
 
 export default class HeaderLinks extends React.Component {
     displayName = 'A component to display a list of links in the header'
@@ -13,9 +14,16 @@ export default class HeaderLinks extends React.Component {
 
     render() {
         const {links, style} = this.props
+        const rowStyle = {
+            textAlign: 'center',
+            '@media (min-width: 768px)': {
+                textAlign: 'end'
+            }
+        }
         return (
-            <div className="row center-xs end-sm">
-                <div className="col-xs-12">
+            <Row style={ rowStyle }>
+                <Column
+                  xsSpan={ 12 }>
                     <ul className="header-links">
                         { links.map((link, index) => {
                             return (
@@ -28,8 +36,8 @@ export default class HeaderLinks extends React.Component {
                             )
                         }) }
                     </ul>
-                </div>
-            </div>
+                </Column>
+            </Row>
         )
     }
 }
