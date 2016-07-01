@@ -1,6 +1,6 @@
 import './styles/flexboxgrid';
 import './styles/dicty-header';
-import './styles/font-awesome';
+import 'font-awesome/css/font-awesome.css'
 import React from 'react';
 
 export default class HeaderLinks extends React.Component {
