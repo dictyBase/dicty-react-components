@@ -2,7 +2,6 @@ import React from 'react'
 import Radium from 'radium'
 import Row from './layout/row'
 import Column from './layout/column'
-import './styles/bootstrap'
 import 'font-awesome/css/font-awesome.css'
 
 @Radium
@@ -25,19 +24,19 @@ export default class SearchBox extends React.Component {
                 position: 'relative',
                 display: 'table',
                 borderCollapse: 'separate',
-                boxSizing: 'borderBox'
+                boxSizing: 'borderBox',
+                lineHeight: '1.42857143'
             },
             formControl: {
                 position: 'relative',
+                font: 'normal normal normal 14px helvetica,arial,sans-serif',
                 zIndex: '2',
                 float: 'left',
                 width: '100%',
-                marginBottom: '0px',
+                margin: '0px',
                 display: 'table-cell',
                 height: '34px',
                 padding: '6px 12px',
-                fontSize: '14px',
-                lineHeight: '1.42857143',
                 color: '#555555',
                 backgroundColor: '#ffffff',
                 backgroundImage: 'none',
@@ -47,7 +46,9 @@ export default class SearchBox extends React.Component {
                 borderBottomRightRadius: '0px',
                 borderTopRightRadius: '0px',
                 borderBottomLeftRadius: '4px',
-                borderTopLeftRadius: '4px'
+                borderTopLeftRadius: '4px',
+                borderCollapse: 'separate',
+                boxSizing: 'border-box'
             },
             inputGroupBtn: {
                 width: '1%',
@@ -61,6 +62,9 @@ export default class SearchBox extends React.Component {
             button: {
                 display: 'inline-block',
                 marginBottom: '0px',
+                marginTop: '0px',
+                marginRight: '0px',
+                marginLeft: '-1px',
                 fontWeight: 'normal',
                 textAlign: 'center',
                 verticalAlign: 'middle',
@@ -75,7 +79,6 @@ export default class SearchBox extends React.Component {
                 lineHeight: '1.42857143',
                 userSelect: 'none',
                 zIndex: '2',
-                marginLeft: '-1px',
                 borderBottomLeftRadius: '0px',
                 borderTopLeftRadius: '0px',
                 borderBottomRightRadius: '4px',
@@ -84,6 +87,7 @@ export default class SearchBox extends React.Component {
                 color: '#333333',
                 backgroundColor: '#ffffff',
                 borderColor: '#cccccc',
+                overflow: 'visible',
 
                 ':hover': {
                     color: '#333333',
