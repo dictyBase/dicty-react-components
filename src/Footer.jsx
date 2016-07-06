@@ -1,27 +1,34 @@
-import './styles/flexboxgrid'
-import './styles/dicty-footer'
 import React from 'react'
+// import Container from './layout/container'
+// import Row from './layout/row'
+import Radium from 'radium'
+import { Grid } from 'radium-grid'
 
+@Radium
 export default class Footer extends React.Component {
     displayName = 'A top level component for footer'
 
     static propTypes = {
-        footerStyle: React.PropTypes.object,
-        containerFluid: React.PropTypes.bool
+        style: React.PropTypes.object
     }
-    static defaultProps = {
-        containerFluid: true
+
+    getStyles = () => {
+        return {
+            base: {
+                backgroundColor: '#1F4484',
+                fontFamily: 'helvetica,arial,sans-serif'
+            }
+        }
     }
 
     render() {
-        const {footerStyle, containerFluid} = this.props
+        const { style } = this.props
+        const defStyle = this.getStyles()
         return (
-            <div className="footer" style={ footerStyle } >
-                <div className={ containerFluid ? 'container-fluid' : 'container' } >
-                    <div className="row center-xs" >
-                        { this.props.children }
-                    </div>
-                </div>
+            <div style={ [defStyle.base, style && style] } >
+                <Grid cellWidth="1/2">
+                    { this.props.children }
+                </Grid>
             </div>
         )
     }
