@@ -1,6 +1,6 @@
-import './styles/flexboxgrid';
-import './styles/dicty-footer';
-import React from 'react';
+import './styles/flexboxgrid'
+import './styles/dicty-footer'
+import React from 'react'
 
 export default class Footer extends React.Component {
     displayName = 'A top level component for footer'
@@ -14,15 +14,15 @@ export default class Footer extends React.Component {
     }
 
     render() {
-        const {footerStyle, containerFluid} = this.props;
+        const {footerStyle, containerFluid} = this.props
         return (
-            <div className="footer" style={footerStyle} >
-                <div className={containerFluid ? 'container-fluid' : 'container'} >
+            <div className="footer" style={ footerStyle } >
+                <div className={ containerFluid ? 'container-fluid' : 'container' } >
                     <div className="row center-xs" >
-                        {this.props.children}
+                        { this.props.children }
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
