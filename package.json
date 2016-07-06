@@ -47,6 +47,7 @@
     "d3": "^3.5.17",
     "font-awesome": "^4.6.3",
     "radium": "^0.17.1",
+    "radium-grid": "^2.0.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.4.1"
