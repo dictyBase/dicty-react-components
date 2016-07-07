@@ -1,48 +1,52 @@
 import './styles/flexboxgrid'
 import './styles/dicty-footer'
 import React from 'react'
-import {Link} from './FooterItem'
+import Radium from 'radium'
+import { FooterItem, Link } from './FooterItem'
+import { Grid, Cell } from 'radium-grid'
 
+@Radium
 export default class FooterCiteSupport extends React.Component {
     displayName = 'Footer component to display sponsors and citation'
 
     static propTypes = {
-        cite: React.PropTypes.array,
-        support: React.PropTypes.array,
-        headerStyle: React.PropTypes.object,
-        linkStyle: React.PropTypes.object
+        width: React.PropTypes.string,
+        cellStyle: React.PropTypes.object,
+        gridStyle: React.PropTypes.object
     }
-
+    getStyles = () => {
+        return {
+            cell: {
+                padding: '10px'
+            }
+        }
+    }
     render() {
-        const {cite, support, headerStyle, linkStyle} = this.props
-
+        const { width, cellStyle, cite, support } = this.props
+        const defStyle = this.getStyles()
         return (
-            <div className="col-xs-12 col-sm">
-                <div className="item-header" style={ headerStyle }>Please cite</div>
-                <ul>
-                    { cite.map((site, index) => {
-                        return (
-                            <Link key={ index }
-                              name={ site.name }
-                              link={ site.href }
-                              style={ linkStyle }
-                            />
-                        )
-                    }) }
-                </ul>
-                <div className="item-header" style={ headerStyle }>Supported by</div>
-                <ul>
-                    { support.map((site, index) => {
-                        return (
-                            <Link key={ index }
-                              name={ site.name }
-                              link={ site.href }
-                              style={ linkStyle }
-                            />
-                        )
-                    }) }
-                </ul>
-            </div>
+            <Cell width={ width } style={ [defStyle.cell, cellStyle && cellStyle] }>
+                <Grid>
+                    <FooterItem title="Please Cite" titleLink="#" width="1">
+                        <Link name="contact" link="#" />
+                        { cite.map((item, index) => {
+                            return (
+                                <Link key={ index } name={ cite.name } link={ cite.href }/>
+                            )
+                        }) }
+                    </FooterItem>
+                </Grid>
+                <Grid>
+                    <FooterItem title="Supported By" titleLink="#" width="1">
+                        <Link name="contact" link="#" />
+                        { support.map((item, index) => {
+                            return (
+                                <Link key={ index } name={ cite.name } link={ cite.href }/>
+                            )
+                        }) }
+                    </FooterItem>
+                </Grid>
+            </Cell>
         )
     }
 }
