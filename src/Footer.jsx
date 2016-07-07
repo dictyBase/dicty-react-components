@@ -1,8 +1,5 @@
 import React from 'react'
-import Container from './layout/container'
-// import Row from './layout/row'
 import Radium from 'radium'
-import { Grid } from 'radium-grid'
 
 @Radium
 export default class Footer extends React.Component {
@@ -26,11 +23,7 @@ export default class Footer extends React.Component {
         const defStyle = this.getStyles()
         return (
             <div style={ [defStyle.base, style && style] } >
-                <Container fixed>
-                <Grid>
-                    { this.props.children }
-                </Grid>
-                </Container>
+                { this.props.children }
             </div>
         )
     }

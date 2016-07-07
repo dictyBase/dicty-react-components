@@ -1,6 +1,5 @@
 import React from 'react'
 import Radium from 'radium'
-import { Cell } from 'radium-grid'
 
 @Radium
 export class FooterItem extends React.Component {
@@ -8,17 +7,19 @@ export class FooterItem extends React.Component {
 
     static propTypes = {
         title: React.PropTypes.string,
-        titleLink: React.PropTypes.string,
+        link: React.PropTypes.string,
+        onClick: React.PropTypes.func,
         headerStyle: React.PropTypes.object,
         titleStyle: React.PropTypes.object,
         listStyle: React.PropTypes.object,
-        cellStyle: React.PropTypes.object,
-        onClick: React.PropTypes.func,
-        width: React.PropTypes.string
+        style: React.PropTypes.object
     }
 
     getStyles = () => {
         return {
+            base: {
+                padding: '10px'
+            },
             title: {
                 color: '#ecf0f1',
                 fontSize: '16px',
@@ -29,31 +30,28 @@ export class FooterItem extends React.Component {
                 }
             },
             header: {
-                margin: '10px 0px'
+                margin: '10px 0px',
+                textAlign: 'center'
             },
             list: {
                 listStyle: 'none',
                 marginTop: '0px',
                 marginLeft: '0px',
-                paddingLeft: '0px'
-            },
-            cell: {
-                padding: '10px'
+                paddingLeft: '0px',
+                textAlign: 'center'
             }
         }
     }
 
     render() {
-        const {
-            title, titleLink, headerStyle,
-            titleStyle, listStyle, children,
-            onClick, cellStyle, width
+        const { title, link, onClick, headerStyle,
+            titleStyle, listStyle, style, children
         } = this.props
         const defStyle = this.getStyles()
         return (
-            <Cell width={ width } style={ [defStyle.cell, cellStyle && cellStyle] }>
+            <div style={ [defStyle.base, style && style] }>
                 <div style={ [defStyle.header, headerStyle && headerStyle] }>
-                    <a href={ titleLink }
+                    <a href={ link }
                       onClick={ onClick }
                       style={ [defStyle.title, titleStyle && titleStyle] }>
                         { title }
@@ -62,19 +60,21 @@ export class FooterItem extends React.Component {
                 <ul style={ [defStyle.list, listStyle && listStyle] }>
                     { children }
                 </ul>
-            </Cell>
+            </div>
         )
     }
 }
 
 @Radium
-export class Link extends React.Component {
-    displayName = 'footer list item with a link'
+export class ListItem extends React.Component {
+    displayName = 'footer list item'
 
     static propTypes = {
         name: React.PropTypes.string,
         link: React.PropTypes.string,
-        style: React.PropTypes.object
+        style: React.PropTypes.object,
+        listStyle: React.PropTypes.object,
+        onClick: React.PropTypes.func
     }
 
     getStyles = () => {
