@@ -1,80 +1,80 @@
 import React from 'react'
 import { render } from 'react-dom'
-import FooterCiteSupport from '../../src/FooterCiteSupport'
+// import FooterCiteSupport from '../../src/FooterCiteSupport'
 import Footer from '../../src/Footer'
-import {FooterItem, Link} from '../../src/FooterItem'
+import { FooterItem, ListItem } from '../../src/FooterItem'
+import { StyleRoot } from 'radium'
+import { Grid, Cell } from 'radium-grid'
 
 class DictyFooter extends React.Component {
     displayName = 'dictyBase footer'
     render() {
-        const cite = [
-            {href: 'http://www.ncbi.nlm.nih.gov/pubmed/23172289', name: 'dictyBase'},
-            {href: 'http://www.ncbi.nlm.nih.gov/pubmed/23494302', name: 'Stock Center'}
-        ]
-
-        const support = [
-            {href: 'http://www.nih.gov/', name: 'NIH'},
-            {href: 'http://gmod.org/wiki/Main_Page', name: 'GMOD'},
-            {href: 'http://geneontology.org/', name: 'Gene Ontology'}
-        ]
-
-        const dropdownItems = [
-            {href: '#', name: 'ES2015'},
-            {href: '#', name: 'Gallery of Pictures/Videos'},
-            {href: '#', name: 'Usage'},
-            {href: '#', name: 'Advanced'},
-            {href: '#', name: 'Dicty Annual Conferences'},
-            {href: '#', name: 'FAQ'}
-        ]
         return (
-            <Footer>
-                <FooterItem title="Genomes" titleLink="#">
-                  <ul>
-                      { dropdownItems.map((item, index) => {
-                          return (
-                              <Link key={ index } name={ item.name } link={ item.href }/>
-                          )
-                      }) }
-                  </ul>
-                  </FooterItem>
-                <FooterItem title="Tools" titleLink="#">
-                  <ul>
-                      { dropdownItems.map((item, index) => {
-                          return (
-                              <Link key={ index } name={ item.name } link={ item.href }/>
-                          )
-                      }) }
-                  </ul>
-                </FooterItem>
-                <FooterItem title="Explore" titleLink="#">
-                  <ul>
-                      { dropdownItems.map((item, index) => {
-                          return (
-                              <Link key={ index } name={ item.name } link={ item.href }/>
-                          )
-                      }) }
-                  </ul>
-                </FooterItem>
-                <FooterItem title="Research" titleLink="#">
-                  <ul>
-                      { dropdownItems.map((item, index) => {
-                          return (
-                              <Link key={ index } name={ item.name } link={ item.href }/>
-                          )
-                      }) }
-                  </ul>
-                </FooterItem>
-                <FooterItem title="Community" titleLink="#">
-                  <ul>
-                      { dropdownItems.map((item, index) => {
-                          return (
-                              <Link key={ index } name={ item.name } link={ item.href }/>
-                          )
-                      }) }
-                  </ul>
-                </FooterItem>
-                <FooterCiteSupport cite={ cite } support={ support }/>
-            </Footer>
+          <StyleRoot>
+              <Footer>
+                  <Grid cellWidth="1/7" smallCellWidth="1" mediumCellWidth="1" align="center">
+                      <Cell>
+                        <FooterItem title="Genomes" link="#">
+                            <ListItem name="List Item" link="#" />
+                            <ListItem name="Dicty Stock Center" link="#" />
+                            <ListItem name="List Item" link="#" />
+                        </FooterItem>
+                      </Cell>
+                      <Cell>
+                         <FooterItem title="Tools" link="#">
+                             <ListItem name="List Item" link="#" />
+                             <ListItem name="Home" link="#" />
+                             <ListItem name="List Item" link="#" />
+                         </FooterItem>
+                      </Cell>
+                      <Cell>
+                         <FooterItem title="Explore" link="#">
+                             <ListItem name="Community" link="#" />
+                             <ListItem name="Contact" link="#" />
+                             <ListItem name="List Item" link="#" />
+                         </FooterItem>
+                      </Cell>
+                      <Cell>
+                         <FooterItem title="Research" link="#">
+                             <ListItem name="Upcoming Meetings" link="#" />
+                             <ListItem name="List Item" link="#" />
+                             <ListItem name="Gallery" link="#" />
+                         </FooterItem>
+                      </Cell>
+                      <Cell>
+                         <FooterItem title="Dicty Stock Center" link="#">
+                             <ListItem name="List Item" link="#" />
+                             <ListItem name="List Item" link="#" />
+                             <ListItem name="List Item" link="#" />
+                         </FooterItem>
+                      </Cell>
+                      <Cell>
+                         <FooterItem title="Community" link="#">
+                             <ListItem name="List Item" link="#" />
+                             <ListItem name="List Item" link="#" />
+                             <ListItem name="List Item" link="#" />
+                         </FooterItem>
+                      </Cell>
+                      <Cell>
+                          <Grid cellWidth="1" align="center">
+                              <Cell>
+                                  <FooterItem title="Please Cite" link="#">
+                                      <ListItem name="dictyBase" link="#" />
+                                      <ListItem name="Dicty Stock Center" link="#" />
+                                  </FooterItem>
+                              </Cell>
+                              <Cell>
+                                  <FooterItem title="Supported By" link="#">
+                                      <ListItem name="NIH" link="#" />
+                                      <ListItem name="GMOD" link="#" />
+                                      <ListItem name="Gene Ontology" link="#" />
+                                  </FooterItem>
+                              </Cell>
+                          </Grid>
+                      </Cell>
+                  </Grid>
+              </Footer>
+          </StyleRoot>
         )
     }
 }
