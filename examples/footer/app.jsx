@@ -1,6 +1,5 @@
 import React from 'react'
 import { render } from 'react-dom'
-// import FooterCiteSupport from '../../src/FooterCiteSupport'
 import Footer from '../../src/Footer'
 import { FooterItem, ListItem } from '../../src/FooterItem'
 import { StyleRoot } from 'radium'
