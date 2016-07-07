@@ -11,7 +11,10 @@ export class FooterItem extends React.Component {
         titleLink: React.PropTypes.string,
         headerStyle: React.PropTypes.object,
         titleStyle: React.PropTypes.object,
-        listStyle: React.PropTypes.object
+        listStyle: React.PropTypes.object,
+        cellStyle: React.PropTypes.object,
+        onClick: React.PropTypes.func,
+        width: React.PropTypes.string
     }
 
     getStyles = () => {
@@ -35,8 +38,7 @@ export class FooterItem extends React.Component {
                 paddingLeft: '0px'
             },
             cell: {
-                padding: '10px',
-                background: '#ff4136'
+                padding: '10px'
             }
         }
     }
@@ -45,11 +47,11 @@ export class FooterItem extends React.Component {
         const {
             title, titleLink, headerStyle,
             titleStyle, listStyle, children,
-            onClick, cellStyle
+            onClick, cellStyle, width
         } = this.props
         const defStyle = this.getStyles()
         return (
-            <Cell style={ [defStyle.cell, cellStyle && cellStyle] }>
+            <Cell width={ width } style={ [defStyle.cell, cellStyle && cellStyle] }>
                 <div style={ [defStyle.header, headerStyle && headerStyle] }>
                     <a href={ titleLink }
                       onClick={ onClick }
