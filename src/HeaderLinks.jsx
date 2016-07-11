@@ -1,7 +1,5 @@
 import React from 'react'
 import Radium from 'radium'
-import Row from './layout/row'
-import Column from './layout/column'
 import 'font-awesome/css/font-awesome.css'
 
 @Radium
@@ -35,12 +33,6 @@ export default class HeaderLinks extends React.Component {
                 ':hover': {
                     color: '#3498db'
                 }
-            },
-            row: {
-                textAlign: 'center',
-                '@media (min-width: 768px)': {
-                    textAlign: 'end'
-                }
             }
         }
     }
@@ -48,25 +40,20 @@ export default class HeaderLinks extends React.Component {
         const {links, style} = this.props
         const defStyle = this.getStyles()
         return (
-            <Row style={ defStyle.row }>
-                <Column
-                  xsSpan={ 12 }>
-                    <ul style={ defStyle.base }>
-                        { links.map((link, index) => {
-                            return (
-                                <li key={ index } style={ defStyle.list }>
-                                    <a key={ index }
-                                      href={ link.href }
-                                      style={ [defStyle.link, style && style] }>
-                                        <span className={ link.iconClass }></span>
-                                        { ' ' }{ link.name }
-                                    </a>
-                                </li>
-                            )
-                        }) }
-                    </ul>
-                </Column>
-            </Row>
+            <ul style={ defStyle.base }>
+                { links.map((link, index) => {
+                    return (
+                        <li key={ index } style={ defStyle.list }>
+                            <a key={ index }
+                              href={ link.href }
+                              style={ [defStyle.link, style && style] }>
+                                <span className={ link.iconClass }></span>
+                                { ' ' }{ link.name }
+                            </a>
+                        </li>
+                    )
+                }) }
+            </ul>
         )
     }
 }
