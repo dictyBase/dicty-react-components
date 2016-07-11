@@ -1,7 +1,5 @@
 import React from 'react'
 import Radium from 'radium'
-import Row from './layout/row'
-import Column from './layout/column'
 import 'font-awesome/css/font-awesome.css'
 
 @Radium
@@ -102,27 +100,18 @@ export default class SearchBox extends React.Component {
         const {btnIcon, placeHolder, onClick, style} = this.props
         const defStyle = this.getStyles()
         return (
-            <Row>
-                <Column
-                  xsSpan={ 12 }
-                  smOffset={ 4 }
-                  smSpan={ 8 }
-                  mdOffset={ 5 }
-                  mdSpan={ 7 }>
-                    <div style={ defStyle.inputGroup }>
-                        <input type="text"
-                          style={ defStyle.formControl }
-                          placeholder={ placeHolder }/>
-                        <span style={ defStyle.inputGroupBtn }>
-                            <button type="button"
-                              onClick={ onClick }
-                              style={ [defStyle.button, style && style] }>
-                                <span className={ btnIcon }></span>
-                            </button>
-                        </span>
-                    </div>
-                </Column>
-            </Row>
+            <div style={ defStyle.inputGroup }>
+                <input type="text"
+                  style={ defStyle.formControl }
+                  placeholder={ placeHolder }/>
+                <span style={ defStyle.inputGroupBtn }>
+                    <button type="submit"
+                      onClick={ onClick }
+                      style={ [defStyle.button, style && style] }>
+                        <span className={ btnIcon }></span>
+                    </button>
+                </span>
+            </div>
         )
     }
 }
