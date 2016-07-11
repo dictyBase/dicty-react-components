@@ -1,18 +1,29 @@
 import React from 'react'
-import Container from './layout/container'
-import Row from './layout/row'
+import Radium from 'radium'
 
+@Radium
 export default class Header extends React.Component {
     displayName = 'A top level component for header'
 
+    static propTypes = {
+        style: React.PropTypes.object
+    }
+
+    getStyles = () => {
+        return {
+            base: {
+                fontFamily: 'helvetica,arial,sans-serif'
+            }
+        }
+    }
+
     render() {
-        const style = { alignItems: 'flex-end' }
+        const { style } = this.props
+        const defStyle = this.getStyles()
         return (
-            <Container fixed>
-                <Row justify={ ['center-xs', 'start-sm'] } style={ style }>
-                    { this.props.children }
-                </Row>
-            </Container>
+            <div style={ [defStyle.base, style && style] } >
+                { this.props.children }
+            </div>
         )
     }
 }
