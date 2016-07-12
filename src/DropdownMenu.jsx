@@ -57,22 +57,21 @@ export default class DropdownMenu extends React.Component {
                 boxSizing: 'border-box',
 
                 ':hover': {
-                    color: '#262626',
-                    backgroundColor: '#f5f5f5'
+                    color: '#ffffff',
+                    backgroundColor: '#000099'
                 },
 
                 ':focus': {
-                    color: '#262626',
-                    backgroundColor: '#f5f5f5'
+                    color: '#ffffff',
+                    backgroundColor: '#000099'
                 },
 
                 '@media (max-width: 767px)': {
                     backgroundColor: 'transparent',
-                    color: '#777',
+                    color: '#f7be81',
 
                     ':hover': {
-                        color: '#333',
-                        backgroundColor: 'transparent'
+                        backgroundColor: '#000099'
                     }
                 }
             }

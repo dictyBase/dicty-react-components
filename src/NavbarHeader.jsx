@@ -35,19 +35,19 @@ export default class NavbarHeader extends React.Component {
                 boxSizing: 'border-box',
 
                 fontSize: '18px',
-                color: '#777',
+                color: '#ffffff',
                 fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
 
                 ':hover': {
-                    color: '#5e5e5e'
+                    color: '#ccffcc'
                 },
 
                 ':focus': {
-                    color: '#5e5e5e'
+                    color: '#ccffcc'
                 },
 
                 '@media (min-width: 768px)': {
-                    marginLeft: '-15px'
+                    display: 'none'
                 }
             },
             navbarToggle: {
@@ -62,17 +62,17 @@ export default class NavbarHeader extends React.Component {
                 borderWidth: '1px',
                 borderStyle: 'solid',
                 borderRadius: '4px',
-                borderColor: '#ddd',
+                borderColor: '#112968',
                 cursor: 'pointer',
                 boxSizing: 'border-box',
 
                 ':hover': {
-                    backgroundColor: '#ddd'
+                    backgroundColor: '#112968'
                 },
 
                 ':focus': {
                     outline: '0px',
-                    backgroundColor: '#ddd'
+                    backgroundColor: '#112968'
                 },
                 '@media (min-width: 768px)': {
                     display: 'none'
@@ -95,7 +95,7 @@ export default class NavbarHeader extends React.Component {
                 width: '22px',
                 height: '2px',
                 borderRadius: '1px',
-                backgroundColor: '#888',
+                backgroundColor: '#ffffff',
                 boxSizing: 'border-box'
             },
             burger: {

@@ -34,16 +34,16 @@ export default class NavItem extends React.Component {
                 boxSizing: 'border-box',
                 textDecoration: 'none',
                 backgroundColor: 'transparent',
-                color: '#777',
+                color: '#ffffff',
+                fontSize: '18px',
 
                 ':hover': {
-                    color: '#333',
-                    backgroundColor: 'transparent'
+                    color: '#ccffcc'
                 },
 
                 ':focus': {
-                    color: '#333',
-                    backgroundColor: 'transparent'
+                    color: '#ffffff',
+                    backgroundColor: '#112968'
                 },
 
                 '@media (min-width: 768px)': {

@@ -32,7 +32,6 @@ export default class NavbarItems extends React.Component {
                 overflowX: 'visible',
                 borderTopWidth: '1px',
                 borderTopStyle: 'solid',
-                borderColor: '#E7E7E7',
                 boxShadow: '0px 1px 0px rgba(255, 255, 255, .1) inset',
                 marginRight: '-15px',
                 marginLeft: '-15px',

@@ -73,14 +73,16 @@ export default class NavbarDropdown extends React.Component {
                 boxSizing: 'border-box',
                 textDecoration: 'none',
                 backgroundColor: 'transparent',
-                color: '#777',
+                color: '#ffffff',
+                fontSize: '18px',
 
                 ':hover': {
-                    color: '#333'
+                    color: '#ccffcc'
                 },
 
                 ':focus': {
-                    color: '#333'
+                    color: '#ffffff',
+                    backgroundColor: '#112968'
                 },
 
                 '@media (min-width: 768px)': {
@@ -88,9 +90,6 @@ export default class NavbarDropdown extends React.Component {
                     paddingBottom: '15px'
                 }
             }
-        }
-        if (this.props.index === this.props.activeIndex) {
-            styles.link.backgroundColor = this.state.open ? '#e7e7e7' : 'transparent'
         }
         return styles
     }

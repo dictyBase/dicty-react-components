@@ -18,8 +18,8 @@ export default class Navbar extends React.Component {
     getStyles = () => {
         return {
             navbar: {
-                backgroundColor: '#f8f8f8',
-                border: '1px solid #e7e7e7',
+                backgroundColor: '#15317e',
+                border: '1px solid #15317e',
                 borderRadius: '0px',
                 position: 'relative',
                 top: '0px',
