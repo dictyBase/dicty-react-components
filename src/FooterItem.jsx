@@ -21,7 +21,7 @@ export class FooterItem extends React.Component {
                 padding: '10px'
             },
             title: {
-                color: '#ecf0f1',
+                color: '#ccffcc',
                 fontSize: '16px',
                 textDecoration: 'none',
 
