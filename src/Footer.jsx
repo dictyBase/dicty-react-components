@@ -14,7 +14,8 @@ export default class Footer extends React.Component {
         return {
             base: {
                 background: 'linear-gradient(#15317E, #0099FF)',
-                fontFamily: 'helvetica,arial,sans-serif'
+                fontFamily: 'helvetica,arial,sans-serif',
+                marginTop: '50px'
             },
             container: {
                 paddingRight: '15px',
