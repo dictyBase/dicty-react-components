@@ -31,14 +31,18 @@ export class FooterItem extends React.Component {
             },
             header: {
                 margin: '10px 0px',
-                textAlign: 'center'
+                '@media (max-width: 767px)': {
+                    textAlign: 'center'
+                }
             },
             list: {
                 listStyle: 'none',
                 marginTop: '0px',
                 marginLeft: '0px',
                 paddingLeft: '0px',
-                textAlign: 'center'
+                '@media (max-width: 767px)': {
+                    textAlign: 'center'
+                }
             }
         }
     }
