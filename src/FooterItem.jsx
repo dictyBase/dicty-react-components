@@ -22,15 +22,16 @@ export class FooterItem extends React.Component {
             },
             title: {
                 color: '#ccffcc',
-                fontSize: '16px',
+                fontSize: '14px',
                 textDecoration: 'none',
+                paddingTop: '10px',
+                paddingBottom: '6px',
 
                 ':hover': {
                     textDecoration: 'underline'
                 }
             },
             header: {
-                margin: '10px 0px',
                 '@media (max-width: 767px)': {
                     textAlign: 'center'
                 }
@@ -84,8 +85,8 @@ export class ListItem extends React.Component {
     getStyles = () => {
         return {
             base: {
-                color: '#ecf0f1',
-                fontSize: '12px',
+                color: '#d8d8d8',
+                fontSize: '11px',
                 textDecoration: 'none',
 
                 ':hover': {
@@ -97,7 +98,6 @@ export class ListItem extends React.Component {
                 marginTop: '0px',
                 marginLeft: '0px',
                 paddingLeft: '0px',
-                paddingBottom: '3px',
                 paddingTop: '3px'
             }
         }
